@@ -53,9 +53,17 @@
   .blk li{margin:6px 0}
 
   .grow{flex:1 1 auto}
-  .pfoot{margin-top:10px;border-top:2px solid #000;padding-top:9px;display:flex;
-    align-items:center;gap:14px;font-size:10.5pt}
-  .pfoot img{width:74px;height:74px;flex:0 0 74px;filter:none}
+  .pfoot{margin-top:12px;border:3px solid #000;border-radius:12px;padding:13px 18px;
+    display:flex;align-items:center;gap:18px}
+  .pfoot .bigqr{width:128px;height:128px;flex:0 0 128px;filter:none}
+  .pf-title{font-size:15pt;font-weight:800;line-height:1.2}
+  .pf-sub{font-size:11pt;margin-top:3px}
+  .pf-sub .url{color:#333;font-size:9.5pt}
+  .pf-langs-label{font-size:10.5pt;font-weight:700;margin-top:9px}
+  .pf-flags{display:flex;flex-wrap:wrap;gap:15px;margin-top:6px}
+  .pf-flags span{display:flex;flex-direction:column;align-items:center;line-height:1}
+  .pf-flags .fl{font-size:29pt;line-height:1}
+  .pf-flags i{font-style:normal;font-size:9pt;font-weight:700;margin-top:3px}
 </style>
 </head>
 <body>
@@ -143,8 +151,20 @@
 
   <div class="grow"></div>
   <div class="pfoot">
-    <img src="qr.png" alt="">
-    <div><b>Besoin de plus de détails ?</b> Scannez pour le guide complet — pas à pas, avec vidéos, et en 6 langues (Français, English, Español, Italiano, Deutsch, Português).<br><span style="color:#333">gforey-ext.github.io/poterie-tv-guide</span></div>
+    <img class="bigqr" src="qr.png" alt="">
+    <div class="pf-text">
+      <div class="pf-title">Besoin de plus de détails ou d’aide ?</div>
+      <div class="pf-sub">Scannez ce code pour voir notre <b>guide détaillé</b> — pas à pas, avec vidéos. <span class="url">gforey-ext.github.io/poterie-tv-guide</span></div>
+      <div class="pf-langs-label">Le guide est disponible dans votre langue :</div>
+      <div class="pf-flags">
+        <span><span class="fl">🇫🇷</span><i>Français</i></span>
+        <span><span class="fl">🇬🇧</span><i>English</i></span>
+        <span><span class="fl">🇪🇸</span><i>Español</i></span>
+        <span><span class="fl">🇮🇹</span><i>Italiano</i></span>
+        <span><span class="fl">🇩🇪</span><i>Deutsch</i></span>
+        <span><span class="fl">🇵🇹</span><i>Português</i></span>
+      </div>
+    </div>
   </div>
 </section>
 
