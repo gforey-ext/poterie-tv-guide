@@ -245,19 +245,32 @@
     table.ref th,table.ref td{padding:8px 9px;font-size:14px}
   }
 
-  /* ---------- Print (A4) ---------- */
+  /* ---------- Print: compact single A4 (recto-verso) ---------- */
+  .printsheet{display:none}
   @media print{
-    body{background:#fff;font-size:11.5pt}
+    body{background:#fff}
     .sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;padding:0}
-    .tabbar,.print-action,.quicklaunch,.js-only,.utilitybar{display:none!important}
-    .tabpanel{display:block!important}
-    .tabpanel + .tabpanel{break-before:page}
-    h2.grp{break-after:avoid}
-    .cards{grid-template-columns:1fr 1fr}
-    .trouble .body{display:block!important}
+    header.top,.tabs,.utilitybar,footer.foot{display:none!important}
+    .printsheet{display:block}
     a[href]:after{content:""}
-    @page{size:A4;margin:13mm}
+    @page{size:A4;margin:10mm}
   }
+  .printsheet{color:#000;font-size:9.6pt;line-height:1.33}
+  .ps-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;border-bottom:2.5px solid #000;padding-bottom:7px;margin-bottom:9px}
+  .ps-head h1{font-size:17pt;margin:0;letter-spacing:-.3px}
+  .ps-sub{margin:3px 0 0;font-size:8.6pt;color:#333}
+  .ps-qr{width:70px;height:70px;flex:0 0 70px;image-rendering:pixelated}
+  .ps-grid{column-count:2;column-gap:8mm}
+  .ps-b{break-inside:avoid;border:1px solid #bbb;border-radius:6px;padding:6px 9px 7px;margin:0 0 8px}
+  .ps-b h2{font-size:10.5pt;margin:0 0 4px;padding-bottom:3px;border-bottom:1px solid #ddd}
+  .ps-b ul,.ps-b ol{margin:3px 0 0;padding-left:15px}
+  .ps-b li{margin:2.5px 0}
+  .ps-b .ps-tight{margin-top:5px}
+  .ps-accent{background:#eef7f0;border-color:#bcdcc6}
+  .ps-warn{background:#fff3e6;border-color:#f0cfa5}
+  .ps-tbl{width:100%;border-collapse:collapse;font-size:9.4pt;margin-top:2px}
+  .ps-tbl td{border:1px solid #cbb;padding:2.5px 7px}
+  .ps-tbl td:last-child{text-align:right}
 </style>
 </head>
 <body>
@@ -622,6 +635,71 @@
     </section>
 
   </div>
+
+  <section class="printsheet">
+    <div class="ps-head">
+      <div>
+        <h1>TV- &amp; Ton-Anleitung — Wohnzimmer</h1>
+        <p class="ps-sub">Das Wichtigste, für den Tisch. Vollständige Anleitung &amp; Details: QR-Code scannen.</p>
+      </div>
+      <img src="qr.png" alt="" class="ps-qr">
+    </div>
+
+    <div class="ps-grid">
+      <section class="ps-b ps-accent">
+        <h2>⚡ Bevor Sie beginnen</h2>
+        <ul>
+          <li>Die <b>Lautsprecher</b> bleiben immer an (Wohnzimmer + Eingang).</li>
+          <li>Für den Fernseher <b>3 Geräte</b> einschalten: den <b>Fernseher</b>, die <b>Orange-Box</b> und den <b>Vorverstärker</b>.</li>
+          <li>Die <b>Lautstärke</b> stellen Sie mit <b>2 Fernbedienungen</b> ein: <b>Orange</b> + <b>Vorverstärker</b> (nicht die Fernbedienung des Fernsehers).</li>
+        </ul>
+      </section>
+
+      <section class="ps-b">
+        <h2>📺 Fernsehen</h2>
+        <ol>
+          <li><b>Fernseher + Orange + Vorverstärker</b> einschalten.</li>
+          <li>Vorverstärker auf den Eingang <b>„Optical In“</b> (Taste Source).</li>
+          <li>Lautstärke einstellen: <b>Orange</b> + <b>Vorverstärker</b>.</li>
+        </ol>
+        <ul class="ps-tight">
+          <li><b>Sender</b>: Nummer eingeben · wechseln mit <b>P+ / P−</b>.</li>
+          <li><b>Netflix / Disney+</b>: <b>MENU</b> → Pfeiltasten → das Feld → <b>OK</b>.</li>
+          <li><b>YouTube</b>: <b>MENU</b> → oben → „Weitere Apps“ → YouTube.</li>
+          <li><b>Film leihen</b>: <b>MENU</b> → „VOD“ <i>(kostenpflichtig)</i>.</li>
+        </ul>
+      </section>
+
+      <section class="ps-b">
+        <h2>🎵 Musik hören</h2>
+        <ul>
+          <li><b>CD</b>: Vorverstärker auf <b>„Line In“</b>, dann <b>Play</b>.</li>
+          <li><b>Handy (Bluetooth)</b>: Vorverstärker auf <b>„Bluetooth“</b>; am Handy mit <b>„Salon“</b> verbinden.</li>
+          <li><b>Ton im Eingang</b>: den <b>Vorverstärker im Eingang</b> einschalten.</li>
+        </ul>
+      </section>
+
+      <section class="ps-b">
+        <h2>🎛️ Eingänge des Vorverstärkers</h2>
+        <table class="ps-tbl">
+          <tr><td>Fernsehen</td><td><b>Optical In</b></td></tr>
+          <tr><td>CD hören</td><td><b>Line In</b></td></tr>
+          <tr><td>Handy (Bluetooth)</td><td><b>Bluetooth</b></td></tr>
+        </table>
+      </section>
+
+      <section class="ps-b ps-warn">
+        <h2>🛠️ Bei Problemen</h2>
+        <ul>
+          <li><b>Kein Ton</b>: Lautsprecher an? Vorverstärker auf dem richtigen Eingang? Orange-Lautstärke nicht auf null <b>und</b> Vorverstärker aufgedreht?</li>
+          <li><b>Kein Bild</b>: Fernseher + Orange an? Fernseher auf dem richtigen <b>HDMI</b>-Eingang (Taste Source/Input des Fernsehers).</li>
+          <li><b>Die Lautstärke des Fernsehers funktioniert nicht</b>: das ist normal — Orange + Vorverstärker verwenden.</li>
+          <li><b>Nichts im Eingang</b>: den Vorverstärker im Eingang einschalten.</li>
+          <li><b>Bluetooth</b>: Vorverstärker auf „Bluetooth“; Salon „vergessen“ und erneut verbinden.</li>
+        </ul>
+      </section>
+    </div>
+  </section>
 
   <footer class="foot">
     TV- &amp; Ton-Anleitung — Wohnzimmer · Eltern-Version · Bewahren Sie diese Anleitung auf dem Couchtisch auf.

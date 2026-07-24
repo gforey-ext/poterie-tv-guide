@@ -245,19 +245,32 @@
     table.ref th,table.ref td{padding:8px 9px;font-size:14px}
   }
 
-  /* ---------- Print (A4) ---------- */
+  /* ---------- Print: compact single A4 (recto-verso) ---------- */
+  .printsheet{display:none}
   @media print{
-    body{background:#fff;font-size:11.5pt}
+    body{background:#fff}
     .sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;padding:0}
-    .tabbar,.print-action,.quicklaunch,.js-only,.utilitybar{display:none!important}
-    .tabpanel{display:block!important}
-    .tabpanel + .tabpanel{break-before:page}
-    h2.grp{break-after:avoid}
-    .cards{grid-template-columns:1fr 1fr}
-    .trouble .body{display:block!important}
+    header.top,.tabs,.utilitybar,footer.foot{display:none!important}
+    .printsheet{display:block}
     a[href]:after{content:""}
-    @page{size:A4;margin:13mm}
+    @page{size:A4;margin:10mm}
   }
+  .printsheet{color:#000;font-size:9.6pt;line-height:1.33}
+  .ps-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;border-bottom:2.5px solid #000;padding-bottom:7px;margin-bottom:9px}
+  .ps-head h1{font-size:17pt;margin:0;letter-spacing:-.3px}
+  .ps-sub{margin:3px 0 0;font-size:8.6pt;color:#333}
+  .ps-qr{width:70px;height:70px;flex:0 0 70px;image-rendering:pixelated}
+  .ps-grid{column-count:2;column-gap:8mm}
+  .ps-b{break-inside:avoid;border:1px solid #bbb;border-radius:6px;padding:6px 9px 7px;margin:0 0 8px}
+  .ps-b h2{font-size:10.5pt;margin:0 0 4px;padding-bottom:3px;border-bottom:1px solid #ddd}
+  .ps-b ul,.ps-b ol{margin:3px 0 0;padding-left:15px}
+  .ps-b li{margin:2.5px 0}
+  .ps-b .ps-tight{margin-top:5px}
+  .ps-accent{background:#eef7f0;border-color:#bcdcc6}
+  .ps-warn{background:#fff3e6;border-color:#f0cfa5}
+  .ps-tbl{width:100%;border-collapse:collapse;font-size:9.4pt;margin-top:2px}
+  .ps-tbl td{border:1px solid #cbb;padding:2.5px 7px}
+  .ps-tbl td:last-child{text-align:right}
 </style>
 </head>
 <body>
@@ -622,6 +635,71 @@
     </section>
 
   </div>
+
+  <section class="printsheet">
+    <div class="ps-head">
+      <div>
+        <h1>Guía TV y Sonido — Salón</h1>
+        <p class="ps-sub">Lo esencial, para tener sobre la mesa. Guía completa y detalles: escanee el código QR.</p>
+      </div>
+      <img src="qr.png" alt="" class="ps-qr">
+    </div>
+
+    <div class="ps-grid">
+      <section class="ps-b ps-accent">
+        <h2>⚡ Antes de empezar</h2>
+        <ul>
+          <li>Los <b>altavoces</b> permanecen siempre encendidos (salón + entrada).</li>
+          <li>Para la tele, encienda <b>3 aparatos</b>: la <b>tele</b>, el <b>descodificador Orange</b> y el <b>preamplificador</b>.</li>
+          <li>El <b>volumen</b> se ajusta con <b>2 mandos</b>: <b>Orange</b> + <b>preamplificador</b> (no el mando de la tele).</li>
+        </ul>
+      </section>
+
+      <section class="ps-b">
+        <h2>📺 Ver la tele</h2>
+        <ol>
+          <li>Encienda <b>tele + Orange + preamplificador</b>.</li>
+          <li>Preamplificador en la entrada <b>«Optical In»</b> (botón Source).</li>
+          <li>Ajuste el volumen: <b>Orange</b> + <b>preamplificador</b>.</li>
+        </ol>
+        <ul class="ps-tight">
+          <li><b>Canales</b>: marque el número · cambie con <b>P+ / P−</b>.</li>
+          <li><b>Netflix / Disney+</b>: <b>MENU</b> → flechas → el icono → <b>OK</b>.</li>
+          <li><b>YouTube</b>: <b>MENU</b> → arriba → «Otras apps» → YouTube.</li>
+          <li><b>Alquilar una película</b>: <b>MENU</b> → «VOD» <i>(de pago)</i>.</li>
+        </ul>
+      </section>
+
+      <section class="ps-b">
+        <h2>🎵 Escuchar música</h2>
+        <ul>
+          <li><b>CD</b>: preamplificador en <b>«Line In»</b>, luego <b>Play</b>.</li>
+          <li><b>Teléfono (Bluetooth)</b>: preamplificador en <b>«Bluetooth»</b>; en el teléfono, conéctese a <b>«Salon»</b>.</li>
+          <li><b>Sonido en la entrada</b>: encienda el <b>preamplificador de la entrada</b>.</li>
+        </ul>
+      </section>
+
+      <section class="ps-b">
+        <h2>🎛️ Entradas del preamplificador</h2>
+        <table class="ps-tbl">
+          <tr><td>Ver la tele</td><td><b>Optical In</b></td></tr>
+          <tr><td>Escuchar un CD</td><td><b>Line In</b></td></tr>
+          <tr><td>Teléfono (Bluetooth)</td><td><b>Bluetooth</b></td></tr>
+        </table>
+      </section>
+
+      <section class="ps-b ps-warn">
+        <h2>🛠️ Si hay algún problema</h2>
+        <ul>
+          <li><b>No hay sonido</b>: ¿altavoces encendidos? ¿preamplificador en la entrada correcta? ¿volumen de Orange no a cero <b>y</b> preamplificador subido?</li>
+          <li><b>No hay imagen</b>: ¿tele + Orange encendidos? ¿tele en la entrada <b>HDMI</b> correcta (botón Source/Input del televisor)?</li>
+          <li><b>El volumen de la tele no funciona</b>: es normal — use Orange + preamplificador.</li>
+          <li><b>Nada en la entrada</b>: encienda el preamplificador de la entrada.</li>
+          <li><b>Bluetooth</b>: preamplificador en «Bluetooth»; «olvide» Salon y vuelva a conectarse.</li>
+        </ul>
+      </section>
+    </div>
+  </section>
 
   <footer class="foot">
     Guía TV y Sonido — Salón · Versión para los padres · Deje esta guía en la mesa de centro.

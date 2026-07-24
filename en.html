@@ -245,19 +245,32 @@
     table.ref th,table.ref td{padding:8px 9px;font-size:14px}
   }
 
-  /* ---------- Print (A4) ---------- */
+  /* ---------- Print: compact single A4 (recto-verso) ---------- */
+  .printsheet{display:none}
   @media print{
-    body{background:#fff;font-size:11.5pt}
+    body{background:#fff}
     .sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;padding:0}
-    .tabbar,.print-action,.quicklaunch,.js-only,.utilitybar{display:none!important}
-    .tabpanel{display:block!important}
-    .tabpanel + .tabpanel{break-before:page}
-    h2.grp{break-after:avoid}
-    .cards{grid-template-columns:1fr 1fr}
-    .trouble .body{display:block!important}
+    header.top,.tabs,.utilitybar,footer.foot{display:none!important}
+    .printsheet{display:block}
     a[href]:after{content:""}
-    @page{size:A4;margin:13mm}
+    @page{size:A4;margin:10mm}
   }
+  .printsheet{color:#000;font-size:9.6pt;line-height:1.33}
+  .ps-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;border-bottom:2.5px solid #000;padding-bottom:7px;margin-bottom:9px}
+  .ps-head h1{font-size:17pt;margin:0;letter-spacing:-.3px}
+  .ps-sub{margin:3px 0 0;font-size:8.6pt;color:#333}
+  .ps-qr{width:70px;height:70px;flex:0 0 70px;image-rendering:pixelated}
+  .ps-grid{column-count:2;column-gap:8mm}
+  .ps-b{break-inside:avoid;border:1px solid #bbb;border-radius:6px;padding:6px 9px 7px;margin:0 0 8px}
+  .ps-b h2{font-size:10.5pt;margin:0 0 4px;padding-bottom:3px;border-bottom:1px solid #ddd}
+  .ps-b ul,.ps-b ol{margin:3px 0 0;padding-left:15px}
+  .ps-b li{margin:2.5px 0}
+  .ps-b .ps-tight{margin-top:5px}
+  .ps-accent{background:#eef7f0;border-color:#bcdcc6}
+  .ps-warn{background:#fff3e6;border-color:#f0cfa5}
+  .ps-tbl{width:100%;border-collapse:collapse;font-size:9.4pt;margin-top:2px}
+  .ps-tbl td{border:1px solid #cbb;padding:2.5px 7px}
+  .ps-tbl td:last-child{text-align:right}
 </style>
 </head>
 <body>
@@ -622,6 +635,71 @@
     </section>
 
   </div>
+
+  <section class="printsheet">
+    <div class="ps-head">
+      <div>
+        <h1>TV &amp; Sound Guide — Lounge</h1>
+        <p class="ps-sub">The essentials, to keep on the table. Full guide &amp; details: scan the QR code.</p>
+      </div>
+      <img src="qr.png" alt="" class="ps-qr">
+    </div>
+
+    <div class="ps-grid">
+      <section class="ps-b ps-accent">
+        <h2>⚡ Before you start</h2>
+        <ul>
+          <li>The <b>speakers</b> always stay on (lounge + entrance).</li>
+          <li>For the TV, switch on <b>3 devices</b>: the <b>TV</b>, the <b>Orange box</b> and the <b>preamp</b>.</li>
+          <li>The <b>volume</b> is set with <b>2 remotes</b>: <b>Orange</b> + <b>preamp</b> (not the TV remote).</li>
+        </ul>
+      </section>
+
+      <section class="ps-b">
+        <h2>📺 Watch TV</h2>
+        <ol>
+          <li>Switch on <b>TV + Orange + preamp</b>.</li>
+          <li>Preamp on the <b>“Optical In”</b> input (Source button).</li>
+          <li>Set the volume: <b>Orange</b> + <b>preamp</b>.</li>
+        </ol>
+        <ul class="ps-tight">
+          <li><b>Channels</b>: type the number · change with <b>P+ / P−</b>.</li>
+          <li><b>Netflix / Disney+</b>: <b>MENU</b> → arrows → the tile → <b>OK</b>.</li>
+          <li><b>YouTube</b>: <b>MENU</b> → up → “More apps” → YouTube.</li>
+          <li><b>Rent a film</b>: <b>MENU</b> → “VOD” <i>(chargeable)</i>.</li>
+        </ul>
+      </section>
+
+      <section class="ps-b">
+        <h2>🎵 Listen to music</h2>
+        <ul>
+          <li><b>CD</b>: preamp on <b>“Line In”</b>, then <b>Play</b>.</li>
+          <li><b>Phone (Bluetooth)</b>: preamp on <b>“Bluetooth”</b>; on the phone, connect to <b>“Salon”</b>.</li>
+          <li><b>Sound in the entrance</b>: switch on the <b>entrance preamp</b>.</li>
+        </ul>
+      </section>
+
+      <section class="ps-b">
+        <h2>🎛️ Preamp inputs</h2>
+        <table class="ps-tbl">
+          <tr><td>Watch TV</td><td><b>Optical In</b></td></tr>
+          <tr><td>Play a CD</td><td><b>Line In</b></td></tr>
+          <tr><td>Phone (Bluetooth)</td><td><b>Bluetooth</b></td></tr>
+        </table>
+      </section>
+
+      <section class="ps-b ps-warn">
+        <h2>🛠️ If something goes wrong</h2>
+        <ul>
+          <li><b>No sound</b>: speakers on? preamp on the right input? Orange volume not at zero <b>and</b> preamp turned up?</li>
+          <li><b>No picture</b>: TV + Orange on? TV on the right <b>HDMI</b> input (TV Source/Input button).</li>
+          <li><b>The TV volume doesn’t work</b>: that’s normal — use Orange + preamp.</li>
+          <li><b>Nothing in the entrance</b>: switch on the entrance preamp.</li>
+          <li><b>Bluetooth</b>: preamp on “Bluetooth”; “forget” Salon then reconnect.</li>
+        </ul>
+      </section>
+    </div>
+  </section>
 
   <footer class="foot">
     TV &amp; Sound Guide — Lounge · Home edition · Please keep this guide on the coffee table.
