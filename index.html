@@ -53,28 +53,74 @@
   header .share .txt p{margin:0 0 3px;font-size:12.5px;color:var(--muted)}
   header .share .txt a{color:var(--preamp);word-break:break-all;font-weight:700;font-size:12.5px}
 
-  /* ---------- Language switcher ---------- */
-  .langbar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 16px;font-size:13.5px}
-  .langbar .flag{font-size:15px;line-height:1}
-  .langbar a{text-decoration:none;color:var(--muted);border:1.5px solid var(--line);border-radius:16px;padding:3px 11px;font-weight:700;transition:.15s}
-  .langbar a:hover{border-color:var(--ink);color:var(--ink)}
-  .langbar a.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+  /* ---------- Utility bar + language dropdown ---------- */
+  .utilitybar{display:flex;justify-content:flex-end;align-items:center;gap:8px;margin:0 0 12px}
+  .langswitch{position:relative}
+  .lang-toggle{
+    display:inline-flex;align-items:center;gap:7px;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;color:var(--ink);
+    border-radius:20px;padding:7px 13px;font-size:14px;font-weight:700;
+  }
+  .lang-toggle:hover{border-color:var(--ink)}
+  .lang-toggle .flag{font-size:17px;line-height:1}
+  .lang-toggle .caret{font-size:10px;color:var(--muted)}
+  .lang-menu{
+    position:absolute;right:0;top:calc(100% + 6px);z-index:60;
+    background:#fff;border:1px solid var(--line);border-radius:12px;
+    box-shadow:0 10px 28px rgba(0,0,0,.17);padding:6px;min-width:184px;
+  }
+  .lang-menu[hidden]{display:none}
+  .lang-menu a{
+    display:flex;align-items:center;gap:10px;text-decoration:none;
+    color:var(--ink);font-weight:600;font-size:14.5px;padding:9px 11px;border-radius:8px;
+  }
+  .lang-menu a .flag{font-size:18px;line-height:1}
+  .lang-menu a:hover{background:#f2ede4}
+  .lang-menu a.current{background:var(--ink);color:#fff}
+  .print-action{
+    display:inline-flex;align-items:center;gap:6px;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;color:var(--muted);
+    border-radius:20px;padding:7px 13px;font-size:14px;font-weight:700;
+  }
+  .print-action:hover{border-color:var(--ink);color:var(--ink)}
+  @media (max-width:719px){ .print-action{display:none} }
 
-  /* ---------- Tabs ---------- */
+  /* ---------- Tabs: mobile-first bottom nav ---------- */
   .tabbar{
-    position:sticky;top:0;z-index:8;
-    display:flex;gap:7px;flex-wrap:wrap;align-items:center;
-    background:var(--paper);padding:12px 0;margin:0 0 20px;border-bottom:2px solid var(--line);
+    position:fixed;left:0;right:0;bottom:0;z-index:50;
+    display:flex;align-items:stretch;margin:0;
+    background:var(--paper);border-top:1px solid var(--line);
+    padding:6px 4px calc(6px + env(safe-area-inset-bottom));
+    box-shadow:0 -2px 14px rgba(0,0,0,.07);
   }
   .tabbar button{
-    border:1.5px solid var(--line);background:#fff;color:var(--muted);
-    padding:9px 16px;border-radius:22px;font-size:15px;font-weight:700;cursor:pointer;
-    transition:.15s;
+    flex:1 1 0;min-width:0;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+    border:none;background:none;color:var(--muted);
+    font-size:11px;font-weight:700;cursor:pointer;padding:4px 2px;border-radius:12px;
   }
-  .tabbar button:hover{border-color:var(--ink);color:var(--ink)}
-  .tabbar button.active{background:var(--ink);color:#fff;border-color:var(--ink)}
-  .tabbar .spacer{margin-left:auto}
-  .tabbar .print-action{background:#fff;color:var(--muted)}
+  .tabbar button .ti{font-size:23px;line-height:1}
+  .tabbar button .tl{max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .tabbar button.active{color:var(--ink)}
+  .tabbar button.active .ti{transform:translateY(-1px)}
+  @media (min-width:720px){
+    .tabbar{
+      position:sticky;top:0;bottom:auto;z-index:8;
+      gap:7px;flex-wrap:wrap;align-items:center;margin:0 0 20px;
+      border-top:none;border-bottom:2px solid var(--line);
+      padding:12px 0;box-shadow:none;
+    }
+    .tabbar button{
+      flex:0 0 auto;flex-direction:row;gap:8px;transition:.15s;
+      border:1.5px solid var(--line);background:#fff;
+      padding:9px 16px;border-radius:22px;font-size:15px;
+    }
+    .tabbar button .ti{font-size:16px}
+    .tabbar button .tl{overflow:visible}
+    .tabbar button:hover{border-color:var(--ink);color:var(--ink)}
+    .tabbar button.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .tabbar button.active .ti{transform:none}
+  }
 
   .tabpanel{display:block}
   .js .tabpanel{display:none}
@@ -185,10 +231,11 @@
   @media (max-width:720px){
     .verify{grid-template-columns:1fr}
     .two{grid-template-columns:1fr}
+    .sheet{padding-bottom:92px}
   }
   @media (max-width:620px){
     body{font-size:16px}
-    .sheet{margin:0;border-radius:0;padding:18px 15px 32px}
+    .sheet{margin:0;border-radius:0;padding:18px 15px 92px}
     header.top{gap:14px}
     header.top h1{font-size:22px}
     header .share{max-width:none;width:100%}
@@ -196,14 +243,13 @@
     .cards{grid-template-columns:1fr}
     ol.steps li{padding-left:40px}
     table.ref th,table.ref td{padding:8px 9px;font-size:14px}
-    .tabbar button{padding:9px 13px;font-size:14px}
   }
 
   /* ---------- Print (A4) ---------- */
   @media print{
     body{background:#fff;font-size:11.5pt}
     .sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;padding:0}
-    .tabbar,.print-action,.quicklaunch,.js-only,.langbar{display:none!important}
+    .tabbar,.print-action,.quicklaunch,.js-only,.utilitybar{display:none!important}
     .tabpanel{display:block!important}
     .tabpanel + .tabpanel{break-before:page}
     h2.grp{break-after:avoid}
@@ -218,14 +264,22 @@
 
 <div class="sheet">
 
-  <nav class="langbar" aria-label="Language / Langue">
-    <a href="index.html" class="active" hreflang="fr"><span class="flag">🇫🇷</span> FR</a>
-    <a href="en.html" hreflang="en"><span class="flag">🇬🇧</span> EN</a>
-    <a href="es.html" hreflang="es"><span class="flag">🇪🇸</span> ES</a>
-    <a href="it.html" hreflang="it"><span class="flag">🇮🇹</span> IT</a>
-    <a href="de.html" hreflang="de"><span class="flag">🇩🇪</span> DE</a>
-    <a href="pt.html" hreflang="pt"><span class="flag">🇵🇹</span> PT</a>
-  </nav>
+  <div class="utilitybar">
+    <div class="langswitch">
+      <button class="lang-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Language / Langue">
+        <span class="flag">🇫🇷</span><span class="code">FR</span><span class="caret">▾</span>
+      </button>
+      <div class="lang-menu" role="menu" hidden>
+        <a href="index.html" class="current" hreflang="fr"><span class="flag">🇫🇷</span> Français</a>
+        <a href="en.html" hreflang="en"><span class="flag">🇬🇧</span> English</a>
+        <a href="es.html" hreflang="es"><span class="flag">🇪🇸</span> Español</a>
+        <a href="it.html" hreflang="it"><span class="flag">🇮🇹</span> Italiano</a>
+        <a href="de.html" hreflang="de"><span class="flag">🇩🇪</span> Deutsch</a>
+        <a href="pt.html" hreflang="pt"><span class="flag">🇵🇹</span> Português</a>
+      </div>
+    </div>
+    <button class="print-action" onclick="window.print()">🖨️ Imprimer</button>
+  </div>
 
   <header class="top">
     <div class="titlewrap">
@@ -243,13 +297,11 @@
   </header>
 
   <div class="tabs">
-    <nav class="tabbar">
-      <button data-tab-btn="demarrage" class="active">🚦 Démarrage</button>
-      <button data-tab-btn="tele">📺 Regarder la télé</button>
-      <button data-tab-btn="son">🎵 Musique &amp; son</button>
-      <button data-tab-btn="depannage">🛠️ Dépannage</button>
-      <span class="spacer"></span>
-      <button class="print-action" onclick="window.print()">🖨️ Imprimer</button>
+    <nav class="tabbar" role="tablist">
+      <button data-tab-btn="demarrage" class="active"><span class="ti">🚦</span><span class="tl">Démarrage</span></button>
+      <button data-tab-btn="tele"><span class="ti">📺</span><span class="tl">Télé</span></button>
+      <button data-tab-btn="son"><span class="ti">🎵</span><span class="tl">Musique</span></button>
+      <button data-tab-btn="depannage"><span class="ti">🛠️</span><span class="tl">Aide</span></button>
     </nav>
 
     <!-- ============ DÉMARRAGE ============ -->
@@ -590,8 +642,7 @@
       var el = document.getElementById(cardId);
       if(el){ el.scrollIntoView({behavior:'smooth', block:'start'}); flash(el); return; }
     }
-    var bar = document.querySelector('.tabbar');
-    if(bar){ window.scrollTo({top: bar.offsetTop - 4, behavior:'smooth'}); }
+    window.scrollTo({top:0, behavior:'smooth'});
   }
   tabs.forEach(function(t){ t.addEventListener('click', function(){ activate(t.getAttribute('data-tab-btn')); }); });
   document.querySelectorAll('[data-goto]').forEach(function(b){
@@ -606,6 +657,18 @@
     if(el){ var p = el.closest('[data-tab]'); if(p){ start = p.getAttribute('data-tab'); card = el.id; } }
   }
   activate(start, card);
+  var lsw = document.querySelector('.langswitch');
+  if(lsw){
+    var lt = lsw.querySelector('.lang-toggle'), lm = lsw.querySelector('.lang-menu');
+    lt.addEventListener('click', function(e){
+      e.stopPropagation();
+      var willOpen = lm.hasAttribute('hidden');
+      if(willOpen){ lm.removeAttribute('hidden'); } else { lm.setAttribute('hidden',''); }
+      lt.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
+    document.addEventListener('click', function(){ lm.setAttribute('hidden',''); lt.setAttribute('aria-expanded','false'); });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ lm.setAttribute('hidden',''); lt.setAttribute('aria-expanded','false'); } });
+  }
   window.addEventListener('beforeprint', function(){
     document.querySelectorAll('details').forEach(function(d){ d.dataset.wasopen = d.open ? '1':''; d.open = true; });
   });
