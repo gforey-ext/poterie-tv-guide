@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guide TV &amp; Son — Salon</title>
+<style>
+  :root{
+    --orange:#E8730C;
+    --preamp:#2563EB;
+    --tv:#374151;
+    --cd:#059669;
+    --ink:#1f2530;
+    --muted:#5c6673;
+    --paper:#fffdf9;
+    --card:#ffffff;
+    --line:#e7e1d6;
+    --warn:#B4520A;
+    --warnbg:#FFF3E6;
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{
+    margin:0;
+    background:#efe9df;
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5;
+    font-size:16px;
+  }
+
+  .sheet{
+    background:var(--paper);
+    max-width:820px;
+    margin:24px auto;
+    padding:34px 40px 48px;
+    box-shadow:0 6px 30px rgba(0,0,0,.12);
+    border-radius:8px;
+  }
+
+  /* ---------- Header ---------- */
+  header.top{
+    border-bottom:3px solid var(--ink);
+    padding-bottom:16px;
+    margin-bottom:22px;
+  }
+  header.top h1{
+    margin:0;
+    font-size:30px;
+    letter-spacing:-.4px;
+  }
+  header.top p{
+    margin:6px 0 0;
+    color:var(--muted);
+    font-size:15px;
+  }
+  .badge{
+    display:inline-block;
+    background:var(--ink);
+    color:#fff;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.6px;
+    text-transform:uppercase;
+    padding:3px 9px;
+    border-radius:20px;
+    vertical-align:middle;
+    margin-left:8px;
+  }
+
+  /* ---------- Section titles ---------- */
+  h2.sec{
+    font-size:21px;
+    margin:34px 0 14px;
+    padding-bottom:6px;
+    border-bottom:2px solid var(--line);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  h2.sec .n{
+    background:var(--ink);
+    color:#fff;
+    width:30px;height:30px;
+    border-radius:50%;
+    display:inline-flex;align-items:center;justify-content:center;
+    font-size:16px;font-weight:700;
+    flex:0 0 auto;
+  }
+  .lead{color:var(--muted);margin:-4px 0 18px;font-size:15px}
+
+  /* ---------- Cards ---------- */
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:16px 18px;
+    margin:14px 0;
+    break-inside:avoid;
+  }
+  .card.usecase{border-left:6px solid var(--line)}
+  .card.tv{border-left-color:var(--tv)}
+  .card.orange{border-left-color:var(--orange)}
+  .card.preamp{border-left-color:var(--preamp)}
+  .card.cd{border-left-color:var(--cd)}
+
+  .card h3{
+    margin:0 0 4px;
+    font-size:18px;
+    display:flex;align-items:center;gap:9px;
+  }
+  .card h3 .ic{font-size:22px;line-height:1}
+  .card .sub{color:var(--muted);font-size:14px;margin:0 0 10px}
+
+  /* remote chips */
+  .remotes{margin:2px 0 10px;font-size:13px}
+  .chip{
+    display:inline-flex;align-items:center;gap:6px;
+    border:1.5px solid;border-radius:20px;
+    padding:2px 10px;margin:3px 6px 0 0;font-weight:600;
+  }
+  .chip::before{content:"";width:10px;height:10px;border-radius:50%;background:currentColor}
+  .chip.tv{color:var(--tv)}
+  .chip.orange{color:var(--orange)}
+  .chip.preamp{color:var(--preamp)}
+  .chip.cd{color:var(--cd)}
+  .chip span{color:var(--ink)}
+
+  /* ---------- Steps ---------- */
+  ol.steps{list-style:none;counter-reset:s;margin:6px 0 0;padding:0}
+  ol.steps li{
+    counter-increment:s;
+    position:relative;
+    padding:8px 0 8px 42px;
+    border-top:1px dashed var(--line);
+  }
+  ol.steps li:first-child{border-top:none}
+  ol.steps li::before{
+    content:counter(s);
+    position:absolute;left:0;top:7px;
+    width:28px;height:28px;border-radius:50%;
+    background:var(--ink);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;font-size:14px;
+  }
+  ol.steps.orange li::before{background:var(--orange)}
+  ol.steps.preamp li::before{background:var(--preamp)}
+  ol.steps.cd li::before{background:var(--cd)}
+
+  .k{
+    display:inline-block;
+    background:#f0ece3;border:1px solid #d9d2c5;
+    border-bottom-width:2px;
+    border-radius:5px;
+    padding:0 7px;
+    font-weight:700;font-size:13.5px;
+    white-space:nowrap;
+  }
+  .k.opt{background:#e8f0ff;border-color:#bcd2ff;color:#1748b8}
+
+  /* ---------- Notes / callouts ---------- */
+  .note{
+    background:#f6f2ea;border:1px solid var(--line);
+    border-radius:8px;padding:11px 14px;margin:12px 0;
+    font-size:14.5px;
+  }
+  .note.tip{background:#eef7f0;border-color:#c9e6d1}
+  .note.warn{background:var(--warnbg);border-color:#f4d3ad;color:var(--warn)}
+  .note b{color:inherit}
+  .note .lbl{font-weight:800;text-transform:uppercase;font-size:11.5px;letter-spacing:.5px;display:block;margin-bottom:2px}
+
+  /* ---------- Device / remote gallery ---------- */
+  .gallery{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
+  .device{
+    border:1px solid var(--line);border-radius:10px;
+    padding:12px;background:var(--card);break-inside:avoid;
+    display:flex;gap:12px;align-items:flex-start;
+  }
+  .photo{
+    flex:0 0 92px;height:92px;border-radius:8px;
+    border:2px dashed #cfc7b8;background:#faf7f1;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    color:#a89f8e;font-size:11px;text-align:center;gap:4px;
+  }
+  .photo .big{font-size:30px;line-height:1}
+  .device .meta h4{margin:0 0 2px;font-size:15.5px}
+  .device .meta p{margin:0;font-size:13px;color:var(--muted)}
+  .dot{display:inline-block;width:10px;height:10px;border-radius:50%;vertical-align:middle;margin-right:5px}
+  .dot.tv{background:var(--tv)}.dot.orange{background:var(--orange)}
+  .dot.preamp{background:var(--preamp)}.dot.cd{background:var(--cd)}
+
+  /* ---------- Diagrams ---------- */
+  .diagram{display:flex;gap:20px;flex-wrap:wrap;align-items:center;justify-content:center;margin:6px 0}
+  .diagram figcaption{color:var(--muted);font-size:13px;text-align:center;margin-top:6px}
+
+  /* ---------- Table ---------- */
+  table.ref{width:100%;border-collapse:collapse;margin-top:8px;font-size:15px}
+  table.ref th,table.ref td{border:1px solid var(--line);padding:9px 12px;text-align:left}
+  table.ref th{background:#f2ede4;font-size:13px;text-transform:uppercase;letter-spacing:.4px}
+  table.ref td .k{font-size:13px}
+
+  /* troubleshooting */
+  .trouble{margin:10px 0;border:1px solid var(--line);border-radius:9px;overflow:hidden}
+  .trouble summary{
+    cursor:pointer;padding:11px 14px;font-weight:700;background:#f6f2ea;font-size:15.5px;
+    list-style:none;
+  }
+  .trouble summary::-webkit-details-marker{display:none}
+  .trouble summary::before{content:"▸ ";color:var(--warn)}
+  .trouble[open] summary::before{content:"▾ "}
+  .trouble .body{padding:4px 16px 12px}
+  .trouble .body ul{margin:8px 0;padding-left:20px}
+  .trouble .body li{margin:5px 0}
+
+  footer.foot{margin-top:34px;padding-top:14px;border-top:2px solid var(--line);color:var(--muted);font-size:13px;text-align:center}
+
+  .printbar{position:sticky;top:0;text-align:center;padding:10px;z-index:5}
+  .printbar button{
+    background:var(--ink);color:#fff;border:none;border-radius:24px;
+    padding:10px 22px;font-size:14px;font-weight:700;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.2);
+  }
+
+  /* ---------- QR / partage ---------- */
+  .share{
+    display:flex;align-items:center;gap:18px;
+    background:#fff;border:1px solid var(--line);border-radius:12px;
+    padding:14px 18px;margin:0 0 6px;break-inside:avoid;
+  }
+  .share img{width:118px;height:118px;flex:0 0 118px;border-radius:8px;image-rendering:pixelated}
+  .share .txt h3{margin:0 0 4px;font-size:17px}
+  .share .txt p{margin:0 0 4px;font-size:14px;color:var(--muted)}
+  .share .txt a{color:var(--preamp);word-break:break-all;font-weight:700;font-size:14px}
+
+  /* ---------- Responsive (mobile) ---------- */
+  img,svg{max-width:100%}
+  .diagram svg{max-width:100%;height:auto}
+  @media (max-width:620px){
+    body{font-size:16px}
+    .sheet{margin:0;border-radius:0;padding:20px 15px 34px}
+    header.top h1{font-size:23px}
+    header.top p{font-size:14px}
+    h2.sec{font-size:18.5px}
+    .gallery{grid-template-columns:1fr}
+    .share{flex-direction:column;text-align:center;gap:12px}
+    .share img{width:150px;height:150px;flex:0 0 auto}
+    ol.steps li{padding-left:40px}
+    table.ref th,table.ref td{padding:8px 9px;font-size:14px}
+    .printbar button{padding:11px 26px;font-size:15px}
+  }
+
+  @media print{
+    body{background:#fff;font-size:12pt}
+    .sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;padding:0}
+    .printbar{display:none}
+    .trouble{break-inside:avoid}
+    .trouble .body{display:block!important}
+    h2.sec{break-after:avoid}
+    a[href]:after{content:""}
+    @page{size:A4;margin:14mm}
+  }
+</style>
+</head>
+<body>
+
+<div class="printbar"><button onclick="window.print()">🖨️ Imprimer le guide</button></div>
+
+<div class="sheet">
+
+  <header class="top">
+    <h1>Guide TV &amp; Son — Salon</h1>
+    <p>Comment regarder la télé, écouter de la musique et diffuser le son dans la maison. Pas besoin de connaissances techniques : suivez simplement les étapes.</p>
+  </header>
+
+  <div class="share">
+    <img src="qr.png" alt="QR code vers le guide en ligne" width="118" height="118">
+    <div class="txt">
+      <h3>📱 Ce guide sur votre téléphone</h3>
+      <p>Scannez ce QR code avec l’appareil photo de votre téléphone pour ouvrir le guide sur votre écran (pratique pour les invités).</p>
+      <a href="https://gforey-ext.github.io/poterie-tv-guide/">gforey-ext.github.io/poterie-tv-guide</a>
+    </div>
+  </div>
+
+  <!-- ================= 1. À VÉRIFIER AVANT TOUT ================= -->
+  <h2 class="sec"><span class="n">1</span> À vérifier avant tout</h2>
+  <p class="lead">Deux ou trois choses à savoir avant de commencer. Elles évitent 90&nbsp;% des problèmes.</p>
+
+  <div class="note tip">
+    <span class="lbl">Les enceintes restent toujours allumées</span>
+    Il y a <b>4 enceintes</b> dans la maison : 2 dans le <b>salon</b>, 2 dans l’<b>entrée / salle à manger</b>.
+    Elles doivent rester <b>allumées en permanence</b> (interrupteur à l’arrière). Normalement, on n’y touche jamais.
+  </div>
+
+  <div class="note">
+    <span class="lbl">Pour regarder la télé, 3 appareils doivent être allumés</span>
+    La <b>télé</b>, le <b>boîtier Orange</b> et le <b>préampli</b>.
+    Peu importe l’ordre : il suffit qu’ils soient tous les trois allumés.
+  </div>
+
+  <div class="note warn">
+    <span class="lbl">Le volume ne se règle pas avec la télécommande de la télé</span>
+    C’est <b>normal</b> : le volume de la télé a été bloqué exprès pour simplifier.
+    Le son se règle avec <b>2 télécommandes</b> : celle du <b>boîtier Orange</b> et celle du <b>préampli</b>.
+    Si l’une des deux est à zéro, il n’y a <b>aucun son</b> — gardez les deux à un niveau moyen.
+  </div>
+
+  <!-- ================= 2. LES APPAREILS ================= -->
+  <h2 class="sec"><span class="n">2</span> Les appareils et leurs télécommandes</h2>
+  <p class="lead">Chaque appareil a sa propre télécommande. Une couleur par appareil, reprise dans tout le guide.</p>
+
+  <div class="gallery">
+    <div class="device">
+      <div class="photo"><span class="big">📺</span>photo télé</div>
+      <div class="meta"><h4><span class="dot tv"></span>La télé</h4>
+        <p>L’écran. On l’allume, mais on ne s’en sert pas pour le volume.</p></div>
+    </div>
+    <div class="device">
+      <div class="photo"><span class="big">📡</span>photo boîtier</div>
+      <div class="meta"><h4><span class="dot orange"></span>Le boîtier Orange</h4>
+        <p>Donne les chaînes, Netflix, Disney+, YouTube… « la box ».</p></div>
+    </div>
+    <div class="device">
+      <div class="photo"><span class="big">🎛️</span>photo préampli</div>
+      <div class="meta"><h4><span class="dot preamp"></span>Le préampli</h4>
+        <p>Envoie le son aux enceintes. C’est lui qui choisit la source du son.</p></div>
+    </div>
+    <div class="device">
+      <div class="photo"><span class="big">💿</span>photo lecteur CD</div>
+      <div class="meta"><h4><span class="dot cd"></span>Le lecteur CD</h4>
+        <p>Pour écouter des disques.</p></div>
+    </div>
+    <div class="device">
+      <div class="photo"><span class="big">🔊</span>photo enceintes</div>
+      <div class="meta"><h4>Les enceintes</h4>
+        <p>2 dans le salon, 2 dans l’entrée. Toujours allumées.</p></div>
+    </div>
+    <div class="device">
+      <div class="photo"><span class="big">🎚️</span>photo télécommandes</div>
+      <div class="meta"><h4>Les 4 télécommandes</h4>
+        <p>Une par appareil : télé, Orange, préampli, CD.</p></div>
+    </div>
+  </div>
+
+  <p class="lead" style="margin-top:16px">Astuce : collez une vraie photo de chaque appareil et de sa télécommande dans les cadres ci-dessus avant d’imprimer.</p>
+
+  <!-- Remote diagram -->
+  <div class="card">
+    <h3><span class="ic">🕹️</span> La télécommande Orange en un coup d’œil</h3>
+    <p class="sub">C’est la télécommande qu’on utilise le plus. Les <b>flèches de navigation</b> servent pour Netflix, Disney+, YouTube…</p>
+    <div class="diagram">
+      <figure style="margin:0">
+        <!-- Orange remote SVG -->
+        <svg width="360" height="430" viewBox="0 0 360 430" role="img" aria-label="Télécommande Orange">
+          <!-- body -->
+          <rect x="46" y="12" width="150" height="406" rx="30" fill="#2c2c2c"/>
+          <rect x="52" y="18" width="138" height="394" rx="26" fill="#3a3a3a"/>
+          <!-- power -->
+          <circle cx="121" cy="44" r="12" fill="#1f1f1f" stroke="#E8730C" stroke-width="2.5"/>
+          <path d="M121 38 v9" stroke="#E8730C" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- menu -->
+          <rect x="72" y="72" width="44" height="20" rx="10" fill="#4a4a4a"/>
+          <text x="94" y="86" font-size="11" fill="#ddd" text-anchor="middle" font-family="sans-serif">MENU</text>
+          <rect x="126" y="72" width="44" height="20" rx="10" fill="#4a4a4a"/>
+          <text x="148" y="86" font-size="11" fill="#ddd" text-anchor="middle" font-family="sans-serif">OK box</text>
+          <!-- D-pad highlight ring -->
+          <circle cx="121" cy="158" r="60" fill="none" stroke="#E8730C" stroke-width="3.5"/>
+          <!-- D-pad -->
+          <circle cx="121" cy="158" r="52" fill="#4a4a4a"/>
+          <circle cx="121" cy="158" r="21" fill="#2c2c2c"/>
+          <text x="121" y="163" font-size="12" fill="#fff" text-anchor="middle" font-family="sans-serif" font-weight="bold">OK</text>
+          <path d="M121 118 l7 12 h-14 z" fill="#E8730C"/>
+          <path d="M121 198 l7 -12 h-14 z" fill="#E8730C"/>
+          <path d="M81 158 l12 7 v-14 z" fill="#E8730C"/>
+          <path d="M161 158 l-12 7 v-14 z" fill="#E8730C"/>
+          <!-- callout -->
+          <path d="M187 158 H250" stroke="#E8730C" stroke-width="2.5" fill="none"/>
+          <path d="M187 158 l12 -6 v12 z" fill="#E8730C"/>
+          <text x="255" y="150" font-size="14" fill="#1f2530" font-family="sans-serif" font-weight="bold">Les flèches</text>
+          <text x="255" y="168" font-size="14" fill="#1f2530" font-family="sans-serif" font-weight="bold">de navigation</text>
+          <text x="255" y="186" font-size="11.5" fill="#5c6673" font-family="sans-serif">+ le bouton OK</text>
+          <!-- P and VOL rockers -->
+          <rect x="72" y="232" width="34" height="52" rx="17" fill="#4a4a4a"/>
+          <text x="89" y="252" font-size="12" fill="#fff" text-anchor="middle" font-family="sans-serif">P +</text>
+          <text x="89" y="272" font-size="12" fill="#fff" text-anchor="middle" font-family="sans-serif">P −</text>
+          <rect x="136" y="232" width="34" height="52" rx="17" fill="#4a4a4a"/>
+          <text x="153" y="252" font-size="10" fill="#fff" text-anchor="middle" font-family="sans-serif">VOL+</text>
+          <text x="153" y="272" font-size="10" fill="#fff" text-anchor="middle" font-family="sans-serif">VOL−</text>
+          <!-- numbers -->
+          <g font-family="sans-serif" font-size="13" fill="#eee" text-anchor="middle">
+            <circle cx="82"  cy="312" r="13" fill="#454545"/><text x="82" y="317">1</text>
+            <circle cx="121" cy="312" r="13" fill="#454545"/><text x="121" y="317">2</text>
+            <circle cx="160" cy="312" r="13" fill="#454545"/><text x="160" y="317">3</text>
+            <circle cx="82"  cy="348" r="13" fill="#454545"/><text x="82" y="353">4</text>
+            <circle cx="121" cy="348" r="13" fill="#454545"/><text x="121" y="353">5</text>
+            <circle cx="160" cy="348" r="13" fill="#454545"/><text x="160" y="353">6</text>
+            <circle cx="82"  cy="384" r="13" fill="#454545"/><text x="82" y="389">7</text>
+            <circle cx="121" cy="384" r="13" fill="#454545"/><text x="121" y="389">8</text>
+            <circle cx="160" cy="384" r="13" fill="#454545"/><text x="160" y="389">9</text>
+          </g>
+        </svg>
+        <figcaption>Schéma simplifié — les boutons peuvent varier légèrement.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- Preamp diagram -->
+  <div class="card">
+    <h3><span class="ic">🎛️</span> Le préampli et le bouton « Source »</h3>
+    <p class="sub">Le préampli choisit d’où vient le son. On appuie sur <b>Source / Input</b> jusqu’à afficher la bonne entrée.</p>
+    <div class="diagram">
+      <figure style="margin:0">
+        <svg width="440" height="150" viewBox="0 0 440 150" role="img" aria-label="Façade du préampli">
+          <rect x="8" y="18" width="424" height="114" rx="12" fill="#222"/>
+          <rect x="14" y="24" width="412" height="102" rx="9" fill="#2e2e2e"/>
+          <!-- display -->
+          <rect x="30" y="46" width="150" height="58" rx="6" fill="#0c1a12" stroke="#144"/>
+          <text x="105" y="72" font-size="13" fill="#3fe08a" text-anchor="middle" font-family="monospace">ENTRÉE :</text>
+          <text x="105" y="94" font-size="16" fill="#3fe08a" text-anchor="middle" font-family="monospace" font-weight="bold">OPTICAL IN</text>
+          <!-- source button highlighted -->
+          <circle cx="250" cy="75" r="26" fill="#333" stroke="#2563EB" stroke-width="4"/>
+          <text x="250" y="72" font-size="11" fill="#fff" text-anchor="middle" font-family="sans-serif">SOURCE</text>
+          <text x="250" y="86" font-size="9"  fill="#aab" text-anchor="middle" font-family="sans-serif">INPUT</text>
+          <!-- volume knob -->
+          <circle cx="380" cy="75" r="30" fill="#3a3a3a" stroke="#555" stroke-width="3"/>
+          <circle cx="380" cy="75" r="4" fill="#ccc"/>
+          <path d="M380 75 L396 60" stroke="#ccc" stroke-width="3" stroke-linecap="round"/>
+          <text x="380" y="122" font-size="10" fill="#aaa" text-anchor="middle" font-family="sans-serif">VOLUME</text>
+          <!-- callout -->
+          <path d="M250 40 V18" stroke="#2563EB" stroke-width="2.5"/>
+          <path d="M250 40 l-6 -12 h12 z" fill="#2563EB"/>
+        </svg>
+        <figcaption>Appuyez plusieurs fois sur <b>Source / Input</b> pour faire défiler : Optical In → Line In → Bluetooth…</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- ================= 3. REGARDER LA TÉLÉ ================= -->
+  <h2 class="sec"><span class="n">3</span> Regarder la télévision</h2>
+  <p class="lead">Le point de départ pour tout ce qui se passe sur la télé : chaînes, Netflix, Disney+, YouTube.</p>
+
+  <div class="card usecase orange">
+    <h3><span class="ic">📺</span> Allumer la télé avec le son</h3>
+    <div class="remotes">
+      <span class="chip orange"><span>Orange</span></span>
+      <span class="chip preamp"><span>Préampli</span></span>
+      <span class="chip tv"><span>Télé</span></span>
+    </div>
+    <ol class="steps">
+      <li>Vérifiez que les <b>enceintes du salon</b> sont allumées (normalement toujours le cas).</li>
+      <li>Allumez la <b>télé</b> — télécommande de la télé, bouton <span class="k">⏻</span>.</li>
+      <li>Allumez le <b>boîtier Orange</b> — télécommande Orange, bouton <span class="k">⏻</span>.</li>
+      <li>Allumez le <b>préampli</b> — télécommande du préampli, bouton <span class="k">⏻</span>.</li>
+      <li>Sur le préampli, appuyez sur <span class="k opt">Source / Input</span> plusieurs fois jusqu’à afficher <span class="k opt">Optical In</span>.</li>
+      <li>Réglez le son avec <b>les deux</b> télécommandes : <span class="k">VOL</span> Orange <b>et</b> le <b>volume du préampli</b>.</li>
+    </ol>
+    <div class="note tip"><span class="lbl">C’est tout</span> La télé affiche automatiquement le boîtier Orange. Vous voyez l’image et vous avez le son : vous pouvez choisir quoi regarder ci-dessous.</div>
+  </div>
+
+  <p class="lead" style="margin-top:22px">Une fois la télé allumée, voici quoi regarder :</p>
+
+  <div class="card usecase orange">
+    <h3><span class="ic">🔢</span> Regarder les chaînes TV</h3>
+    <div class="remotes"><span class="chip orange"><span>Orange</span></span></div>
+    <ol class="steps orange">
+      <li>Tapez le <b>numéro</b> de la chaîne sur la télécommande Orange (ex. <span class="k">2</span>).</li>
+      <li>Pour changer de chaîne : <span class="k">P +</span> / <span class="k">P −</span>.</li>
+    </ol>
+  </div>
+
+  <div class="card usecase orange">
+    <h3><span class="ic">🎬</span> Regarder Netflix</h3>
+    <div class="remotes"><span class="chip orange"><span>Orange</span></span></div>
+    <ol class="steps orange">
+      <li>Appuyez sur <span class="k">MENU</span> pour revenir à l’écran d’accueil Orange.</li>
+      <li>Avec les <b>flèches</b>, appuyez vers le <b>bas</b>, puis déplacez-vous jusqu’à la vignette <b>Netflix</b>.</li>
+      <li>Appuyez sur <span class="k">OK</span>.</li>
+    </ol>
+  </div>
+
+  <div class="card usecase orange">
+    <h3><span class="ic">🏰</span> Regarder Disney+</h3>
+    <div class="remotes"><span class="chip orange"><span>Orange</span></span></div>
+    <ol class="steps orange">
+      <li>Appuyez sur <span class="k">MENU</span>.</li>
+      <li>Avec les <b>flèches</b>, allez sur la vignette <b>Disney+</b> (comme pour Netflix).</li>
+      <li>Appuyez sur <span class="k">OK</span>.</li>
+    </ol>
+  </div>
+
+  <div class="card usecase orange">
+    <h3><span class="ic">▶️</span> Regarder YouTube</h3>
+    <div class="remotes"><span class="chip orange"><span>Orange</span></span></div>
+    <ol class="steps orange">
+      <li>Appuyez sur <span class="k">MENU</span>.</li>
+      <li>Avec les flèches, allez vers le <b>haut</b> et ouvrez <span class="k">Autres applis</span>.</li>
+      <li>Trouvez <b>YouTube</b>, puis appuyez sur <span class="k">OK</span>.</li>
+    </ol>
+  </div>
+
+  <div class="card usecase orange">
+    <h3><span class="ic">🎥</span> Louer un film (VOD Orange) <span class="badge">Parents</span></h3>
+    <div class="remotes"><span class="chip orange"><span>Orange</span></span></div>
+    <ol class="steps orange">
+      <li>Appuyez sur <span class="k">MENU</span>.</li>
+      <li>Avec les flèches, allez vers le <b>haut</b> sur l’offre <span class="k">VOD</span>.</li>
+      <li>Choisissez le film et suivez les indications à l’écran.</li>
+    </ol>
+    <div class="note warn"><span class="lbl">Attention — payant</span> Chaque location est <b>facturée sur l’abonnement Orange</b>. À ne pas utiliser par les invités.</div>
+  </div>
+
+  <!-- ================= 4. ÉCOUTER UN CD ================= -->
+  <h2 class="sec"><span class="n">4</span> Écouter un CD</h2>
+  <div class="card usecase cd">
+    <h3><span class="ic">💿</span> Mettre un disque</h3>
+    <div class="remotes">
+      <span class="chip cd"><span>Lecteur CD</span></span>
+      <span class="chip preamp"><span>Préampli</span></span>
+    </div>
+    <ol class="steps cd">
+      <li>Vérifiez que les <b>enceintes</b> et le <b>préampli</b> sont allumés.</li>
+      <li>Allumez le <b>lecteur CD</b> et insérez le disque.</li>
+      <li>Sur le préampli, mettez l’entrée sur <span class="k opt">Line In</span> (bouton <span class="k">Source / Input</span>).</li>
+      <li>Appuyez sur <span class="k">▶ Play</span> sur la télécommande du CD. Réglez le son avec le <b>volume du préampli</b>.</li>
+    </ol>
+  </div>
+
+  <!-- ================= 5. BLUETOOTH ================= -->
+  <h2 class="sec"><span class="n">5</span> Écouter la musique de votre téléphone (Bluetooth)</h2>
+  <div class="card usecase preamp">
+    <h3><span class="ic">📱</span> Connexion Bluetooth « Salon »</h3>
+    <div class="remotes"><span class="chip preamp"><span>Préampli</span></span></div>
+    <ol class="steps preamp">
+      <li>Vérifiez que les <b>enceintes</b> et le <b>préampli</b> sont allumés.</li>
+      <li>Sur le préampli, mettez l’entrée sur <span class="k opt">Bluetooth</span> (bouton <span class="k">Source / Input</span>).</li>
+      <li>Sur votre téléphone : ouvrez le <b>Bluetooth</b> et connectez-vous à <span class="k">Salon</span>.</li>
+      <li>Lancez votre musique. Réglez le son avec le <b>téléphone</b> et le <b>volume du préampli</b>.</li>
+    </ol>
+  </div>
+
+  <!-- ================= 6. SON DANS L'ENTRÉE ================= -->
+  <h2 class="sec"><span class="n">6</span> Mettre le son aussi dans l’entrée / salle à manger</h2>
+  <div class="card usecase preamp">
+    <h3><span class="ic">🔊</span> Diffuser le son dans les deux pièces</h3>
+    <div class="remotes"><span class="chip preamp"><span>Préampli de l’entrée</span></span></div>
+    <ol class="steps preamp">
+      <li>Vérifiez que les <b>2 enceintes de l’entrée</b> sont allumées.</li>
+      <li>Allumez le <b>préampli de l’entrée</b> (dans l’entrée / salle à manger).</li>
+      <li>Le son du salon (télé, CD, Bluetooth) est alors diffusé <b>aussi dans l’entrée</b>.</li>
+    </ol>
+    <div class="note"><span class="lbl">Pour arrêter</span> Éteignez simplement le préampli de l’entrée. Le salon continue de fonctionner normalement.</div>
+  </div>
+
+  <!-- ================= 7. AIDE-MÉMOIRE ================= -->
+  <h2 class="sec"><span class="n">7</span> Aide-mémoire : quelle entrée du préampli ?</h2>
+  <p class="lead">Le préampli doit toujours être réglé sur la bonne entrée, sinon pas de son. Bouton <span class="k">Source / Input</span>.</p>
+  <table class="ref">
+    <thead><tr><th>Ce que vous voulez faire</th><th>Entrée du préampli</th></tr></thead>
+    <tbody>
+      <tr><td>Regarder la télévision</td><td><span class="k opt">Optical In</span></td></tr>
+      <tr><td>Écouter un CD</td><td><span class="k opt">Line In</span></td></tr>
+      <tr><td>Écouter le téléphone (Bluetooth)</td><td><span class="k opt">Bluetooth</span></td></tr>
+    </tbody>
+  </table>
+
+  <!-- ================= 8. DÉPANNAGE ================= -->
+  <h2 class="sec"><span class="n">8</span> En cas de problème</h2>
+  <p class="lead">Les solutions aux petits soucis les plus fréquents.</p>
+
+  <details class="trouble" open>
+    <summary>Il n’y a aucun son</summary>
+    <div class="body">
+      <ul>
+        <li>Les <b>enceintes</b> sont-elles allumées ? (salon — et entrée si vous voulez le son là-bas)</li>
+        <li>Le <b>préampli</b> est-il allumé et sur la <b>bonne entrée</b> ? (<span class="k opt">Optical In</span> pour la télé)</li>
+        <li>Le <b>volume Orange</b> n’est-il pas à zéro ? Le <b>volume du préampli</b> est-il monté ? Il faut les deux.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="trouble">
+    <summary>Il n’y a pas d’image (écran noir)</summary>
+    <div class="body">
+      <ul>
+        <li>La <b>télé</b> et le <b>boîtier Orange</b> sont-ils bien allumés ?</li>
+        <li>La télé doit être sur la <b>bonne entrée HDMI</b> (celle du boîtier Orange). Sur la télécommande de la télé, appuyez sur <span class="k">Source</span> (ou <span class="k">Input</span>) et choisissez l’entrée <b>HDMI</b> du boîtier Orange.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="trouble">
+    <summary>La télécommande de la télé ne change pas le volume</summary>
+    <div class="body">
+      <p>C’est <b>voulu</b> : le volume de la télé a été bloqué exprès. Réglez le son avec la télécommande <b>Orange</b> (VOL) et le <b>volume du préampli</b>.</p>
+    </div>
+  </details>
+
+  <details class="trouble">
+    <summary>Il y a du son dans le salon mais pas dans l’entrée</summary>
+    <div class="body">
+      <ul>
+        <li>Allumez le <b>préampli de l’entrée</b>.</li>
+        <li>Vérifiez que les <b>2 enceintes de l’entrée</b> sont allumées.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="trouble">
+    <summary>Le Bluetooth ne se connecte pas</summary>
+    <div class="body">
+      <ul>
+        <li>Le préampli doit être sur l’entrée <span class="k opt">Bluetooth</span>.</li>
+        <li>Sur le téléphone : « oubliez » le réseau <span class="k">Salon</span>, puis reconnectez-vous.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="trouble">
+    <summary>Le son est saccadé ou se coupe</summary>
+    <div class="body">
+      <ul>
+        <li>Vérifiez que rien n’a bougé au niveau des appareils.</li>
+        <li>Éteignez puis rallumez le <b>boîtier Orange</b>.</li>
+      </ul>
+    </div>
+  </details>
+
+  <footer class="foot">
+    Guide TV &amp; Son — Salon · Version parents · Gardez ce guide sur la table basse.
+  </footer>
+
+</div>
+</body>
+</html>
