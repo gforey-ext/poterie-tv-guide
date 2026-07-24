@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Guide TV &amp; Son — l'essentiel</title>
+<style>
+  @page{size:A4;margin:9mm}
+  *{box-sizing:border-box}
+  body{margin:0;color:#000;background:#fff;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:11.5pt;line-height:1.34;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  img{filter:grayscale(1) contrast(1.05)}
+
+  .sheetpage{padding:2mm 1mm;height:276mm;display:flex;flex-direction:column}
+  .sheetpage.front{break-after:page}
+
+  /* header */
+  .ph{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;
+    border-bottom:3px solid #000;padding-bottom:8px;margin-bottom:12px}
+  .ph h1{font-size:22pt;margin:0;letter-spacing:-.4px}
+  .ph .sub{margin:4px 0 0;font-size:10pt;color:#333}
+  .ph .qr{width:78px;height:78px;flex:0 0 78px;filter:none}
+
+  h2.sec{font-size:15pt;margin:16px 0 8px;padding:2px 0 4px;border-bottom:2px solid #000;
+    display:flex;align-items:center;gap:9px}
+  h2.sec .small{font-weight:400;font-size:10.5pt;color:#333}
+  .n{display:inline-flex;width:24px;height:24px;border-radius:50%;background:#000;color:#fff;
+    align-items:center;justify-content:center;font-weight:800;font-size:13px;flex:0 0 auto}
+
+  /* remotes id strip */
+  .remotes{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}
+  .rm{border:1.5px solid #888;border-radius:8px;padding:9px 6px;text-align:center;break-inside:avoid}
+  .rm .pic{height:230px;display:flex;align-items:center;justify-content:center;margin-bottom:8px}
+  .rm .pic img{max-height:230px;max-width:100%}
+  .rm .name{font-weight:800;font-size:13pt;display:flex;align-items:center;justify-content:center;gap:6px}
+  .rm .use{font-size:10pt;color:#333;margin-top:3px;line-height:1.25}
+
+  /* steps */
+  ol.steps{margin:6px 0 0;padding-left:0;list-style:none;counter-reset:s}
+  ol.steps li{counter-increment:s;position:relative;padding:9px 0 9px 34px;border-top:1px dotted #bbb}
+  ol.steps li:first-child{border-top:none}
+  ol.steps li::before{content:counter(s);position:absolute;left:0;top:7px;width:24px;height:24px;
+    border-radius:50%;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:13px}
+  .warn{border:2.5px solid #000;border-radius:8px;padding:9px 13px;margin:11px 0 0;font-size:11pt;font-weight:600}
+  .tip{background:#eee;border:1.5px solid #888;border-radius:8px;padding:8px 12px;margin:10px 0 0;font-size:10.5pt}
+  .k{display:inline-block;border:1.5px solid #000;border-radius:4px;padding:0 6px;font-weight:800;font-size:10.5pt;white-space:nowrap}
+  .badge{display:inline-flex;width:19px;height:19px;border-radius:50%;background:#000;color:#fff;
+    align-items:center;justify-content:center;font-weight:800;font-size:11px;vertical-align:-3px}
+
+  .cols2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .blk ul{margin:5px 0 0;padding-left:18px}
+  .blk li{margin:6px 0}
+
+  .grow{flex:1 1 auto}
+  .pfoot{margin-top:10px;border-top:2px solid #000;padding-top:9px;display:flex;
+    align-items:center;gap:14px;font-size:10.5pt}
+  .pfoot img{width:74px;height:74px;flex:0 0 74px;filter:none}
+</style>
+</head>
+<body>
+
+<!-- ============ FRONT ============ -->
+<section class="sheetpage front">
+  <div class="ph">
+    <div>
+      <h1>Télé &amp; Son — l’essentiel</h1>
+      <p class="sub">À garder sur la table. Guide complet, vidéos &amp; autres langues : scannez le QR&nbsp;code&nbsp;→</p>
+    </div>
+    <img class="qr" src="qr.png" alt="">
+  </div>
+
+  <h2 class="sec">Vos 4 télécommandes <span class="small">— vous utilisez surtout les deux premières</span></h2>
+  <div class="remotes">
+    <div class="rm">
+      <div class="pic"><img src="photos/remote-orange.jpg" alt="Télécommande Orange"></div>
+      <div class="name"><span class="badge">1</span> TV &amp; Applis</div>
+      <div class="use">Chaînes, Netflix, Disney+, YouTube</div>
+    </div>
+    <div class="rm">
+      <div class="pic"><img src="photos/remote-preamp.jpg" alt="Télécommande WiiM"></div>
+      <div class="name"><span class="badge">2</span> Son</div>
+      <div class="use">Volume + choisir la source</div>
+    </div>
+    <div class="rm">
+      <div class="pic"><img src="photos/remote-tv.jpg" alt="Télécommande Sony"></div>
+      <div class="name"><span class="badge">3</span> Écran</div>
+      <div class="use">Allumer / éteindre la télé</div>
+    </div>
+    <div class="rm">
+      <div class="pic"><img src="photos/remote-cd.jpg" alt="Télécommande CD"></div>
+      <div class="name"><span class="badge">4</span> CD</div>
+      <div class="use">Écouter des disques</div>
+    </div>
+  </div>
+
+  <h2 class="sec"><span class="n">▶</span> Regarder la télé</h2>
+  <ol class="steps">
+    <li><b>Allumez</b> les 3 télécommandes <span class="badge">1</span> <span class="badge">2</span> <span class="badge">3</span> (le bouton marche/arrêt de chacune).</li>
+    <li>Sur <span class="badge">2</span> <b>Son</b> : appuyez sur le bouton <b>source</b> (⤴) jusqu’à ce que l’écran rond affiche <span class="k">Optical In</span>.</li>
+    <li><b>Volume</b> : réglez avec <span class="badge">1</span> <b>et</b> <span class="badge">2</span>.</li>
+  </ol>
+  <div class="warn">⚠ Pas de son ? La télécommande <span class="badge">3</span> Écran ne règle <u>jamais</u> le volume — c’est <span class="badge">1</span> et <span class="badge">2</span>. Vérifiez aussi qu’aucune des deux n’est à zéro.</div>
+  <div class="tip"><b>Changer de chaîne</b> : tapez le numéro sur <span class="badge">1</span>, ou changez avec les touches <b>+</b> / <b>−</b>.</div>
+  <div class="grow"></div>
+</section>
+
+<!-- ============ BACK ============ -->
+<section class="sheetpage back">
+  <div class="cols2">
+    <div class="blk">
+      <h2 class="sec">🎬 Netflix · Disney+ · YouTube</h2>
+      <ul>
+        <li>Sur <span class="badge">1</span> <b>TV &amp; Applis</b>, appuyez sur <span class="k">MENU</span>.</li>
+        <li>Avec les <b>flèches</b>, allez sur la vignette (Netflix, Disney+…) puis <span class="k">OK</span>.</li>
+        <li><b>YouTube</b> : <span class="k">MENU</span> → « Autres applis » → YouTube.</li>
+      </ul>
+    </div>
+    <div class="blk">
+      <h2 class="sec">🎵 Écouter de la musique</h2>
+      <ul>
+        <li><b>Un CD</b> : allumez <span class="badge">4</span> (bouton rouge), mettez le disque. Sur <span class="badge">2</span>, source (⤴) → <span class="k">Line In</span>, puis <span class="k">▶</span>.</li>
+        <li><b>Le téléphone</b> : sur <span class="badge">2</span>, source (⤴) → <span class="k">Bluetooth</span>. Sur le téléphone, connectez-vous au Bluetooth <span class="k">Salon</span>.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="sec">🛠️ Si quelque chose ne marche pas</h2>
+  <div class="cols2">
+    <div class="blk">
+      <ul>
+        <li><b>Pas de son du tout</b> : les <b>enceintes</b> sont-elles allumées (interrupteur sur <span class="k">I</span> à l’arrière) ? <span class="badge">2</span> Son sur la bonne source ? Le volume de <span class="badge">1</span> et <span class="badge">2</span> est-il monté ?</li>
+        <li><b>Le Bluetooth ne se connecte pas</b> : sur le téléphone, « oubliez » <span class="k">Salon</span> puis reconnectez-vous.</li>
+      </ul>
+    </div>
+    <div class="blk">
+      <ul>
+        <li><b>Pas d’image (écran noir)</b> : <span class="badge">3</span> Écran et <span class="badge">1</span> Orange sont-ils allumés ? Sinon, sur <span class="badge">3</span> Écran, changez la source (touche <span class="k">Source</span>) jusqu’à voir la télé.</li>
+        <li><b>Le son se coupe / saccade</b> : éteignez puis rallumez le boîtier <span class="badge">1</span> Orange.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grow"></div>
+  <div class="pfoot">
+    <img src="qr.png" alt="">
+    <div><b>Besoin de plus de détails ?</b> Scannez pour le guide complet — pas à pas, avec vidéos, et en 6 langues (Français, English, Español, Italiano, Deutsch, Português).<br><span style="color:#333">gforey-ext.github.io/poterie-tv-guide</span></div>
+  </div>
+</section>
+
+</body>
+</html>
