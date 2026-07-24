@@ -19,7 +19,15 @@
     border-bottom:3px solid #000;padding-bottom:8px;margin-bottom:12px}
   .ph h1{font-size:22pt;margin:0;letter-spacing:-.4px}
   .ph .sub{margin:4px 0 0;font-size:10pt;color:#333}
-  .ph .qr{width:78px;height:78px;flex:0 0 78px;filter:none}
+  .ph .qc{flex:0 0 auto;display:grid;grid-template-columns:auto auto auto;
+    grid-template-areas:"txt arr qr" "flg flg flg";align-items:center;gap:2px 10px;
+    border:2.5px solid #000;border-radius:11px;padding:8px 13px}
+  .qc .qc-txt{grid-area:txt;text-align:right;max-width:150px}
+  .qc .qc-t1{font-weight:800;font-size:12.5pt;line-height:1.1}
+  .qc .qc-t2{font-size:8.6pt;color:#333;margin-top:2px;line-height:1.18}
+  .qc .qc-arr{grid-area:arr;display:flex;align-items:center}
+  .qc .qc-qr{grid-area:qr;width:88px;height:88px;filter:none}
+  .qc .qc-flags{grid-area:flg;display:flex;justify-content:center;gap:9px;font-size:17pt;margin-top:6px;line-height:1}
 
   h2.sec{font-size:15pt;margin:16px 0 8px;padding:2px 0 4px;border-bottom:2px solid #000;
     display:flex;align-items:center;gap:9px}
@@ -73,9 +81,19 @@
   <div class="ph">
     <div>
       <h1>Télé &amp; Son — l’essentiel</h1>
-      <p class="sub">À garder sur la table. Guide complet, vidéos &amp; autres langues : scannez le QR&nbsp;code&nbsp;→</p>
+      <p class="sub">À garder sur la table basse.</p>
     </div>
-    <img class="qr" src="qr.png" alt="">
+    <div class="qc">
+      <div class="qc-txt">
+        <div class="qc-t1">Plus de détails ?</div>
+        <div class="qc-t2">Guide détaillé, vidéos &amp; aide — scannez</div>
+      </div>
+      <div class="qc-arr">
+        <svg width="42" height="34" viewBox="0 0 42 34"><path d="M3 17 H30 M22 6 L37 17 L22 28" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <img class="qc-qr" src="qr.png" alt="">
+      <div class="qc-flags">🇫🇷 🇬🇧 🇪🇸 🇮🇹 🇩🇪 🇵🇹</div>
+    </div>
   </div>
 
   <h2 class="sec">Vos 4 télécommandes <span class="small">— vous utilisez surtout les deux premières</span></h2>
