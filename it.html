@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="it">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Guide TV &amp; Son — Salon</title>
+<title>Guida TV &amp; Audio — Salotto</title>
 <style>
   :root{
     --orange:#E8730C;
@@ -218,26 +218,26 @@
 
 <div class="sheet">
 
-  <nav class="langbar" aria-label="Choix de la langue">
+  <nav class="langbar" aria-label="Scelta della lingua">
     <span class="lbl" aria-hidden="true">🌐</span>
-    <a href="index.html" class="active" hreflang="fr">Français</a>
+    <a href="index.html" hreflang="fr">Français</a>
     <a href="en.html" hreflang="en">English</a>
     <a href="es.html" hreflang="es">Español</a>
-    <a href="it.html" hreflang="it">Italiano</a>
+    <a href="it.html" class="active" hreflang="it">Italiano</a>
     <a href="de.html" hreflang="de">Deutsch</a>
     <a href="pt.html" hreflang="pt">Português</a>
   </nav>
 
   <header class="top">
     <div class="titlewrap">
-      <h1>Guide TV &amp; Son — Salon</h1>
-      <p>Comment regarder la télé, écouter de la musique et diffuser le son dans la maison. Choisissez un onglet, puis suivez les étapes.</p>
+      <h1>Guida TV &amp; Audio — Salotto</h1>
+      <p>Come guardare la TV, ascoltare musica e diffondere l’audio in casa. Scelga una scheda e segua i passaggi.</p>
     </div>
     <div class="share">
-      <img src="qr.png" alt="QR code vers le guide en ligne" width="94" height="94">
+      <img src="qr.png" alt="QR code per la guida online" width="94" height="94">
       <div class="txt">
-        <h3>📱 Sur votre téléphone</h3>
-        <p>Scannez pour ouvrir ce guide.</p>
+        <h3>📱 Sul suo telefono</h3>
+        <p>Scansioni per aprire questa guida.</p>
         <a href="https://gforey-ext.github.io/poterie-tv-guide/">gforey-ext.github.io/poterie-tv-guide</a>
       </div>
     </div>
@@ -245,72 +245,72 @@
 
   <div class="tabs">
     <nav class="tabbar">
-      <button data-tab-btn="demarrage" class="active">🚦 Démarrage</button>
-      <button data-tab-btn="tele">📺 Regarder la télé</button>
-      <button data-tab-btn="son">🎵 Musique &amp; son</button>
-      <button data-tab-btn="depannage">🛠️ Dépannage</button>
+      <button data-tab-btn="demarrage" class="active">🚦 Avvio</button>
+      <button data-tab-btn="tele">📺 Guardare la TV</button>
+      <button data-tab-btn="son">🎵 Musica &amp; audio</button>
+      <button data-tab-btn="depannage">🛠️ Risoluzione problemi</button>
       <span class="spacer"></span>
-      <button class="print-action" onclick="window.print()">🖨️ Imprimer</button>
+      <button class="print-action" onclick="window.print()">🖨️ Stampa</button>
     </nav>
 
     <!-- ============ DÉMARRAGE ============ -->
     <section class="tabpanel active" data-tab="demarrage">
 
-      <h2 class="grp">🚦 À vérifier avant tout</h2>
+      <h2 class="grp">🚦 Da controllare prima di tutto</h2>
       <div class="verify">
         <div class="vtile tip">
-          <div class="vh"><span class="vi">🔊</span> Enceintes toujours allumées</div>
-          <p><b>4 enceintes</b> (2 salon, 2 entrée). Elles restent allumées en permanence — on n’y touche pas.</p>
+          <div class="vh"><span class="vi">🔊</span> Casse sempre accese</div>
+          <p><b>4 casse</b> (2 in salotto, 2 all’ingresso). Restano sempre accese — non le tocchi.</p>
         </div>
         <div class="vtile">
-          <div class="vh"><span class="vi">🎛️</span> 3 appareils pour la télé</div>
-          <p>La <b>télé</b>, le <b>boîtier Orange</b> et le <b>préampli</b>, tous allumés. Peu importe l’ordre.</p>
+          <div class="vh"><span class="vi">🎛️</span> 3 apparecchi per la TV</div>
+          <p>La <b>TV</b>, il <b>decoder Orange</b> e il <b>preamplificatore</b>, tutti accesi. Non importa l’ordine.</p>
         </div>
         <div class="vtile warn">
-          <div class="vh"><span class="vi">🔈</span> Volume = 2 télécommandes</div>
-          <p>Pas avec la télécommande de la télé (bloquée exprès) mais avec <b>Orange</b> + <b>préampli</b>. Les deux à un niveau moyen.</p>
+          <div class="vh"><span class="vi">🔈</span> Volume = 2 telecomandi</div>
+          <p>Non con il telecomando della TV (bloccato apposta) ma con <b>Orange</b> + <b>preamplificatore</b>. Entrambi a livello medio.</p>
         </div>
       </div>
 
-      <h2 class="grp">Que voulez-vous faire&nbsp;?</h2>
-      <p class="lead js-only">Cliquez sur votre besoin pour aller directement aux étapes.</p>
+      <h2 class="grp">Cosa desidera fare&nbsp;?</h2>
+      <p class="lead js-only">Clicchi sulla sua esigenza per andare direttamente ai passaggi.</p>
       <div class="quicklaunch">
-        <button data-goto="tele#uc-allumer"><span class="qi">📺</span> Allumer la télé</button>
-        <button data-goto="tele#uc-chaines"><span class="qi">🔢</span> Chaînes TV</button>
+        <button data-goto="tele#uc-allumer"><span class="qi">📺</span> Accendere la TV</button>
+        <button data-goto="tele#uc-chaines"><span class="qi">🔢</span> Canali TV</button>
         <button data-goto="tele#uc-netflix"><span class="qi">🎬</span> Netflix</button>
         <button data-goto="tele#uc-disney"><span class="qi">🏰</span> Disney+</button>
         <button data-goto="tele#uc-youtube"><span class="qi">▶️</span> YouTube</button>
-        <button data-goto="tele#uc-vod"><span class="qi">🎥</span> Louer un film</button>
-        <button data-goto="son#uc-cd"><span class="qi">💿</span> Écouter un CD</button>
-        <button data-goto="son#uc-bluetooth"><span class="qi">📱</span> Bluetooth (téléphone)</button>
-        <button data-goto="son#uc-entree"><span class="qi">🔊</span> Son dans l’entrée</button>
-        <button data-goto="depannage"><span class="qi">🛠️</span> Un problème&nbsp;?</button>
+        <button data-goto="tele#uc-vod"><span class="qi">🎥</span> Noleggiare un film</button>
+        <button data-goto="son#uc-cd"><span class="qi">💿</span> Ascoltare un CD</button>
+        <button data-goto="son#uc-bluetooth"><span class="qi">📱</span> Bluetooth (telefono)</button>
+        <button data-goto="son#uc-entree"><span class="qi">🔊</span> Audio all’ingresso</button>
+        <button data-goto="depannage"><span class="qi">🛠️</span> Un problema&nbsp;?</button>
       </div>
 
-      <h2 class="grp">Les appareils &amp; les télécommandes</h2>
-      <p class="lead">Chaque appareil a sa télécommande. Une couleur par appareil, reprise dans tout le guide.</p>
+      <h2 class="grp">Gli apparecchi &amp; i telecomandi</h2>
+      <p class="lead">Ogni apparecchio ha il suo telecomando. Un colore per apparecchio, ripreso in tutta la guida.</p>
       <div class="gallery">
-        <div class="device"><div class="photo"><span class="big">📺</span>photo télé</div>
-          <div class="meta"><h4><span class="dot tv"></span>La télé</h4><p>L’écran. On ne s’en sert pas pour le volume.</p></div></div>
-        <div class="device"><div class="photo"><span class="big">📡</span>photo boîtier</div>
-          <div class="meta"><h4><span class="dot orange"></span>Le boîtier Orange</h4><p>Chaînes, Netflix, Disney+, YouTube… « la box ».</p></div></div>
-        <div class="device"><div class="photo"><span class="big">🎛️</span>photo préampli</div>
-          <div class="meta"><h4><span class="dot preamp"></span>Le préampli</h4><p>Envoie le son aux enceintes. Choisit la source.</p></div></div>
-        <div class="device"><div class="photo"><span class="big">💿</span>photo lecteur CD</div>
-          <div class="meta"><h4><span class="dot cd"></span>Le lecteur CD</h4><p>Pour écouter des disques.</p></div></div>
-        <div class="device"><div class="photo"><span class="big">🔊</span>photo enceintes</div>
-          <div class="meta"><h4>Les enceintes</h4><p>2 salon, 2 entrée. Toujours allumées.</p></div></div>
-        <div class="device"><div class="photo"><span class="big">🎚️</span>photo télécommandes</div>
-          <div class="meta"><h4>Les 4 télécommandes</h4><p>Une par appareil.</p></div></div>
+        <div class="device"><div class="photo"><span class="big">📺</span>foto TV</div>
+          <div class="meta"><h4><span class="dot tv"></span>La TV</h4><p>Lo schermo. Non si usa per il volume.</p></div></div>
+        <div class="device"><div class="photo"><span class="big">📡</span>foto decoder</div>
+          <div class="meta"><h4><span class="dot orange"></span>Il decoder Orange</h4><p>Canali, Netflix, Disney+, YouTube… « la box ».</p></div></div>
+        <div class="device"><div class="photo"><span class="big">🎛️</span>foto preamplificatore</div>
+          <div class="meta"><h4><span class="dot preamp"></span>Il preamplificatore</h4><p>Invia l’audio alle casse. Sceglie la sorgente.</p></div></div>
+        <div class="device"><div class="photo"><span class="big">💿</span>foto lettore CD</div>
+          <div class="meta"><h4><span class="dot cd"></span>Il lettore CD</h4><p>Per ascoltare i dischi.</p></div></div>
+        <div class="device"><div class="photo"><span class="big">🔊</span>foto casse</div>
+          <div class="meta"><h4>Le casse</h4><p>2 in salotto, 2 all’ingresso. Sempre accese.</p></div></div>
+        <div class="device"><div class="photo"><span class="big">🎚️</span>foto telecomandi</div>
+          <div class="meta"><h4>I 4 telecomandi</h4><p>Uno per apparecchio.</p></div></div>
       </div>
-      <p class="lead" style="margin-top:14px">Astuce : collez une vraie photo dans chaque cadre avant d’imprimer.</p>
+      <p class="lead" style="margin-top:14px">Consiglio: incolli una foto vera in ogni riquadro prima di stampare.</p>
 
       <div class="two" style="margin-top:6px">
         <div class="card">
-          <h3><span class="ic">🕹️</span> La télécommande Orange</h3>
-          <p class="sub">Celle qu’on utilise le plus. Les <b>flèches</b> servent pour Netflix, Disney+, YouTube…</p>
+          <h3><span class="ic">🕹️</span> Il telecomando Orange</h3>
+          <p class="sub">Quello che si usa di più. Le <b>frecce</b> servono per Netflix, Disney+, YouTube…</p>
           <div class="diagram"><figure style="margin:0">
-            <svg width="340" height="410" viewBox="0 0 360 430" role="img" aria-label="Télécommande Orange">
+            <svg width="340" height="410" viewBox="0 0 360 430" role="img" aria-label="Telecomando Orange">
               <rect x="46" y="12" width="150" height="406" rx="30" fill="#2c2c2c"/>
               <rect x="52" y="18" width="138" height="394" rx="26" fill="#3a3a3a"/>
               <circle cx="121" cy="44" r="12" fill="#1f1f1f" stroke="#E8730C" stroke-width="2.5"/>
@@ -318,7 +318,7 @@
               <rect x="72" y="72" width="44" height="20" rx="10" fill="#4a4a4a"/>
               <text x="94" y="86" font-size="11" fill="#ddd" text-anchor="middle" font-family="sans-serif">MENU</text>
               <rect x="126" y="72" width="44" height="20" rx="10" fill="#4a4a4a"/>
-              <text x="148" y="86" font-size="10" fill="#ddd" text-anchor="middle" font-family="sans-serif">RETOUR</text>
+              <text x="148" y="86" font-size="10" fill="#ddd" text-anchor="middle" font-family="sans-serif">INDIETRO</text>
               <circle cx="121" cy="158" r="60" fill="none" stroke="#E8730C" stroke-width="3.5"/>
               <circle cx="121" cy="158" r="52" fill="#4a4a4a"/>
               <circle cx="121" cy="158" r="21" fill="#2c2c2c"/>
@@ -329,9 +329,9 @@
               <path d="M161 158 l-12 7 v-14 z" fill="#E8730C"/>
               <path d="M187 158 H250" stroke="#E8730C" stroke-width="2.5" fill="none"/>
               <path d="M187 158 l12 -6 v12 z" fill="#E8730C"/>
-              <text x="255" y="150" font-size="14" fill="#1f2530" font-family="sans-serif" font-weight="bold">Les flèches</text>
-              <text x="255" y="168" font-size="14" fill="#1f2530" font-family="sans-serif" font-weight="bold">de navigation</text>
-              <text x="255" y="186" font-size="11.5" fill="#5c6673" font-family="sans-serif">+ le bouton OK</text>
+              <text x="255" y="150" font-size="14" fill="#1f2530" font-family="sans-serif" font-weight="bold">Le frecce</text>
+              <text x="255" y="168" font-size="14" fill="#1f2530" font-family="sans-serif" font-weight="bold">di navigazione</text>
+              <text x="255" y="186" font-size="11.5" fill="#5c6673" font-family="sans-serif">+ il tasto OK</text>
               <rect x="72" y="232" width="34" height="52" rx="17" fill="#4a4a4a"/>
               <text x="89" y="252" font-size="12" fill="#fff" text-anchor="middle" font-family="sans-serif">P +</text>
               <text x="89" y="272" font-size="12" fill="#fff" text-anchor="middle" font-family="sans-serif">P −</text>
@@ -350,19 +350,19 @@
                 <circle cx="160" cy="384" r="13" fill="#454545"/><text x="160" y="389">9</text>
               </g>
             </svg>
-            <figcaption>Schéma simplifié — les boutons peuvent varier.</figcaption>
+            <figcaption>Schema semplificato — i tasti possono variare.</figcaption>
           </figure></div>
         </div>
 
         <div class="card">
-          <h3><span class="ic">🎛️</span> Le préampli &amp; le bouton « Source »</h3>
-          <p class="sub">Il choisit d’où vient le son. Appuyez sur <b>Source / Input</b> jusqu’à la bonne entrée.</p>
+          <h3><span class="ic">🎛️</span> Il preamplificatore &amp; il tasto « Source »</h3>
+          <p class="sub">Sceglie da dove arriva l’audio. Prema <b>Source / Input</b> fino all’ingresso giusto.</p>
           <div class="diagram"><figure style="margin:0">
-            <svg width="420" height="150" viewBox="0 0 440 150" role="img" aria-label="Façade du préampli">
+            <svg width="420" height="150" viewBox="0 0 440 150" role="img" aria-label="Fronte del preamplificatore">
               <rect x="8" y="18" width="424" height="114" rx="12" fill="#222"/>
               <rect x="14" y="24" width="412" height="102" rx="9" fill="#2e2e2e"/>
               <rect x="30" y="46" width="150" height="58" rx="6" fill="#0c1a12" stroke="#144"/>
-              <text x="105" y="72" font-size="13" fill="#3fe08a" text-anchor="middle" font-family="monospace">ENTRÉE :</text>
+              <text x="105" y="72" font-size="13" fill="#3fe08a" text-anchor="middle" font-family="monospace">INGRESSO :</text>
               <text x="105" y="94" font-size="16" fill="#3fe08a" text-anchor="middle" font-family="monospace" font-weight="bold">OPTICAL IN</text>
               <circle cx="250" cy="75" r="26" fill="#333" stroke="#2563EB" stroke-width="4"/>
               <text x="250" y="72" font-size="11" fill="#fff" text-anchor="middle" font-family="sans-serif">SOURCE</text>
@@ -374,15 +374,15 @@
               <path d="M250 40 V18" stroke="#2563EB" stroke-width="2.5"/>
               <path d="M250 40 l-6 -12 h12 z" fill="#2563EB"/>
             </svg>
-            <figcaption>Appuyez plusieurs fois : Optical In → Line In → Bluetooth…</figcaption>
+            <figcaption>Prema più volte: Optical In → Line In → Bluetooth…</figcaption>
           </figure></div>
-          <h3 class="subhead">Repère : quelle entrée du préampli&nbsp;?</h3>
+          <h3 class="subhead">Riferimento: quale ingresso del preamplificatore&nbsp;?</h3>
           <table class="ref">
-            <thead><tr><th>Pour…</th><th>Entrée</th></tr></thead>
+            <thead><tr><th>Per…</th><th>Ingresso</th></tr></thead>
             <tbody>
-              <tr><td>Regarder la télé</td><td><span class="k opt">Optical In</span></td></tr>
-              <tr><td>Écouter un CD</td><td><span class="k opt">Line In</span></td></tr>
-              <tr><td>Téléphone (Bluetooth)</td><td><span class="k opt">Bluetooth</span></td></tr>
+              <tr><td>Guardare la TV</td><td><span class="k opt">Optical In</span></td></tr>
+              <tr><td>Ascoltare un CD</td><td><span class="k opt">Line In</span></td></tr>
+              <tr><td>Telefono (Bluetooth)</td><td><span class="k opt">Bluetooth</span></td></tr>
             </tbody>
           </table>
         </div>
@@ -391,33 +391,33 @@
 
     <!-- ============ REGARDER LA TÉLÉ ============ -->
     <section class="tabpanel" data-tab="tele">
-      <h2 class="grp">📺 Regarder la télé</h2>
+      <h2 class="grp">📺 Guardare la TV</h2>
 
       <div class="card usecase orange hero" id="uc-allumer">
-        <h3><span class="ic">📺</span> Allumer la télé avec le son</h3>
+        <h3><span class="ic">📺</span> Accendere la TV con l’audio</h3>
         <div class="remotes">
           <span class="chip orange"><span>Orange</span></span>
-          <span class="chip preamp"><span>Préampli</span></span>
-          <span class="chip tv"><span>Télé</span></span>
+          <span class="chip preamp"><span>Preamplificatore</span></span>
+          <span class="chip tv"><span>TV</span></span>
         </div>
         <ol class="steps">
-          <li>Vérifiez que les <b>enceintes du salon</b> sont allumées.</li>
-          <li>Allumez la <b>télé</b> — télécommande télé, bouton <span class="k">⏻</span>.</li>
-          <li>Allumez le <b>boîtier Orange</b> — télécommande Orange, bouton <span class="k">⏻</span>.</li>
-          <li>Allumez le <b>préampli</b> — télécommande préampli, bouton <span class="k">⏻</span>.</li>
-          <li>Sur le préampli, appuyez sur <span class="k opt">Source / Input</span> jusqu’à afficher <span class="k opt">Optical In</span>.</li>
-          <li>Réglez le son avec <b>les deux</b> télécommandes : <span class="k">VOL</span> Orange <b>et</b> volume du préampli.</li>
+          <li>Controlli che le <b>casse del salotto</b> siano accese.</li>
+          <li>Accenda la <b>TV</b> — telecomando TV, tasto <span class="k">⏻</span>.</li>
+          <li>Accenda il <b>decoder Orange</b> — telecomando Orange, tasto <span class="k">⏻</span>.</li>
+          <li>Accenda il <b>preamplificatore</b> — telecomando preamplificatore, tasto <span class="k">⏻</span>.</li>
+          <li>Sul preamplificatore, prema <span class="k opt">Source / Input</span> fino a visualizzare <span class="k opt">Optical In</span>.</li>
+          <li>Regoli l’audio con <b>entrambi</b> i telecomandi: <span class="k">VOL</span> Orange <b>e</b> volume del preamplificatore.</li>
         </ol>
-        <div class="note tip"><span class="lbl">C’est tout</span> La télé affiche automatiquement le boîtier Orange. Choisissez maintenant quoi regarder ci-dessous.</div>
+        <div class="note tip"><span class="lbl">È tutto</span> La TV mostra automaticamente il decoder Orange. Ora scelga qui sotto cosa guardare.</div>
       </div>
 
       <div class="cards">
         <div class="card usecase orange" id="uc-chaines">
-          <h3><span class="ic">🔢</span> Les chaînes TV</h3>
+          <h3><span class="ic">🔢</span> I canali TV</h3>
           <div class="remotes"><span class="chip orange"><span>Orange</span></span></div>
           <ol class="steps orange">
-            <li>Tapez le <b>numéro</b> de la chaîne (ex. <span class="k">2</span>).</li>
-            <li>Changer de chaîne : <span class="k">P +</span> / <span class="k">P −</span>.</li>
+            <li>Digiti il <b>numero</b> del canale (es. <span class="k">2</span>).</li>
+            <li>Cambiare canale: <span class="k">P +</span> / <span class="k">P −</span>.</li>
           </ol>
         </div>
 
@@ -425,9 +425,9 @@
           <h3><span class="ic">🎬</span> Netflix</h3>
           <div class="remotes"><span class="chip orange"><span>Orange</span></span></div>
           <ol class="steps orange">
-            <li>Appuyez sur <span class="k">MENU</span>.</li>
-            <li>Avec les <b>flèches</b>, allez vers le <b>bas</b> jusqu’à la vignette <b>Netflix</b>.</li>
-            <li>Appuyez sur <span class="k">OK</span>.</li>
+            <li>Prema <span class="k">MENU</span>.</li>
+            <li>Con le <b>frecce</b>, vada in <b>basso</b> fino all’icona <b>Netflix</b>.</li>
+            <li>Prema <span class="k">OK</span>.</li>
           </ol>
         </div>
 
@@ -435,9 +435,9 @@
           <h3><span class="ic">🏰</span> Disney+</h3>
           <div class="remotes"><span class="chip orange"><span>Orange</span></span></div>
           <ol class="steps orange">
-            <li>Appuyez sur <span class="k">MENU</span>.</li>
-            <li>Avec les <b>flèches</b>, allez sur la vignette <b>Disney+</b> (comme Netflix).</li>
-            <li>Appuyez sur <span class="k">OK</span>.</li>
+            <li>Prema <span class="k">MENU</span>.</li>
+            <li>Con le <b>frecce</b>, vada sull’icona <b>Disney+</b> (come Netflix).</li>
+            <li>Prema <span class="k">OK</span>.</li>
           </ol>
         </div>
 
@@ -445,111 +445,111 @@
           <h3><span class="ic">▶️</span> YouTube</h3>
           <div class="remotes"><span class="chip orange"><span>Orange</span></span></div>
           <ol class="steps orange">
-            <li>Appuyez sur <span class="k">MENU</span>.</li>
-            <li>Avec les flèches, allez vers le <b>haut</b> et ouvrez <span class="k">Autres applis</span>.</li>
-            <li>Trouvez <b>YouTube</b> puis <span class="k">OK</span>.</li>
+            <li>Prema <span class="k">MENU</span>.</li>
+            <li>Con le frecce, vada in <b>alto</b> e apra <span class="k">Altre app</span>.</li>
+            <li>Trovi <b>YouTube</b> e prema <span class="k">OK</span>.</li>
           </ol>
         </div>
 
         <div class="card usecase orange" id="uc-vod">
-          <h3><span class="ic">🎥</span> Louer un film (VOD)</h3>
+          <h3><span class="ic">🎥</span> Noleggiare un film (VOD)</h3>
           <div class="remotes"><span class="chip orange"><span>Orange</span></span></div>
           <ol class="steps orange">
-            <li>Appuyez sur <span class="k">MENU</span>.</li>
-            <li>Avec les flèches, allez vers le <b>haut</b> sur <span class="k">VOD</span>.</li>
-            <li>Choisissez le film et suivez l’écran.</li>
+            <li>Prema <span class="k">MENU</span>.</li>
+            <li>Con le frecce, vada in <b>alto</b> su <span class="k">VOD</span>.</li>
+            <li>Scelga il film e segua le indicazioni sullo schermo.</li>
           </ol>
-          <div class="note warn"><span class="lbl">Attention — payant</span> Chaque location est facturée sur l’abonnement Orange.</div>
+          <div class="note warn"><span class="lbl">Attenzione — a pagamento</span> Ogni noleggio viene addebitato sull’abbonamento Orange.</div>
         </div>
       </div>
     </section>
 
     <!-- ============ MUSIQUE & SON ============ -->
     <section class="tabpanel" data-tab="son">
-      <h2 class="grp">🎵 Musique &amp; son</h2>
+      <h2 class="grp">🎵 Musica &amp; audio</h2>
       <div class="cards">
         <div class="card usecase cd" id="uc-cd">
-          <h3><span class="ic">💿</span> Écouter un CD</h3>
-          <div class="remotes"><span class="chip cd"><span>Lecteur CD</span></span><span class="chip preamp"><span>Préampli</span></span></div>
+          <h3><span class="ic">💿</span> Ascoltare un CD</h3>
+          <div class="remotes"><span class="chip cd"><span>Lettore CD</span></span><span class="chip preamp"><span>Preamplificatore</span></span></div>
           <ol class="steps cd">
-            <li>Enceintes et <b>préampli</b> allumés.</li>
-            <li>Allumez le <b>lecteur CD</b> et insérez le disque.</li>
-            <li>Préampli sur <span class="k opt">Line In</span> (bouton <span class="k">Source / Input</span>).</li>
-            <li>Appuyez sur <span class="k">▶ Play</span>. Volume : préampli.</li>
+            <li>Casse e <b>preamplificatore</b> accesi.</li>
+            <li>Accenda il <b>lettore CD</b> e inserisca il disco.</li>
+            <li>Preamplificatore su <span class="k opt">Line In</span> (tasto <span class="k">Source / Input</span>).</li>
+            <li>Prema <span class="k">▶ Play</span>. Volume: preamplificatore.</li>
           </ol>
         </div>
 
         <div class="card usecase preamp" id="uc-bluetooth">
-          <h3><span class="ic">📱</span> Téléphone (Bluetooth)</h3>
-          <div class="remotes"><span class="chip preamp"><span>Préampli</span></span></div>
+          <h3><span class="ic">📱</span> Telefono (Bluetooth)</h3>
+          <div class="remotes"><span class="chip preamp"><span>Preamplificatore</span></span></div>
           <ol class="steps preamp">
-            <li>Enceintes et <b>préampli</b> allumés.</li>
-            <li>Préampli sur <span class="k opt">Bluetooth</span> (bouton <span class="k">Source / Input</span>).</li>
-            <li>Sur le téléphone : Bluetooth → se connecter à <span class="k">Salon</span>.</li>
-            <li>Lancez la musique. Volume : téléphone + préampli.</li>
+            <li>Casse e <b>preamplificatore</b> accesi.</li>
+            <li>Preamplificatore su <span class="k opt">Bluetooth</span> (tasto <span class="k">Source / Input</span>).</li>
+            <li>Sul telefono: Bluetooth → si colleghi a <span class="k">Salon</span>.</li>
+            <li>Avvii la musica. Volume: telefono + preamplificatore.</li>
           </ol>
         </div>
 
         <div class="card usecase preamp" id="uc-entree">
-          <h3><span class="ic">🔊</span> Son dans l’entrée / salle à manger</h3>
-          <div class="remotes"><span class="chip preamp"><span>Préampli entrée</span></span></div>
+          <h3><span class="ic">🔊</span> Audio all’ingresso / sala da pranzo</h3>
+          <div class="remotes"><span class="chip preamp"><span>Preamplificatore ingresso</span></span></div>
           <ol class="steps preamp">
-            <li>Vérifiez que les <b>2 enceintes de l’entrée</b> sont allumées.</li>
-            <li>Allumez le <b>préampli de l’entrée</b>.</li>
-            <li>Le son du salon (télé, CD, Bluetooth) est diffusé <b>aussi dans l’entrée</b>.</li>
+            <li>Controlli che le <b>2 casse dell’ingresso</b> siano accese.</li>
+            <li>Accenda il <b>preamplificatore dell’ingresso</b>.</li>
+            <li>L’audio del salotto (TV, CD, Bluetooth) viene diffuso <b>anche all’ingresso</b>.</li>
           </ol>
-          <div class="note"><span class="lbl">Pour arrêter</span> Éteignez le préampli de l’entrée. Le salon continue normalement.</div>
+          <div class="note"><span class="lbl">Per fermare</span> Spenga il preamplificatore dell’ingresso. Il salotto continua normalmente.</div>
         </div>
       </div>
     </section>
 
     <!-- ============ DÉPANNAGE ============ -->
     <section class="tabpanel" data-tab="depannage">
-      <h2 class="grp">🛠️ En cas de problème</h2>
+      <h2 class="grp">🛠️ In caso di problema</h2>
       <div class="two">
         <details class="trouble" open>
-          <summary>Aucun son</summary>
+          <summary>Nessun audio</summary>
           <div class="body"><ul>
-            <li>Les <b>enceintes</b> sont-elles allumées ? (salon — et entrée si besoin)</li>
-            <li>Le <b>préampli</b> est-il allumé et sur la bonne entrée ? (<span class="k opt">Optical In</span> pour la télé)</li>
-            <li>Le <b>volume Orange</b> pas à zéro ? Le <b>volume préampli</b> monté ? Il faut les deux.</li>
+            <li>Le <b>casse</b> sono accese? (salotto — e ingresso se serve)</li>
+            <li>Il <b>preamplificatore</b> è acceso e sull’ingresso giusto? (<span class="k opt">Optical In</span> per la TV)</li>
+            <li>Il <b>volume Orange</b> non è a zero? Il <b>volume del preamplificatore</b> è alzato? Servono entrambi.</li>
           </ul></div>
         </details>
 
         <details class="trouble">
-          <summary>Pas d’image (écran noir)</summary>
+          <summary>Nessuna immagine (schermo nero)</summary>
           <div class="body"><ul>
-            <li>La <b>télé</b> et le <b>boîtier Orange</b> sont-ils allumés ?</li>
-            <li>La télé doit être sur la bonne entrée <b>HDMI</b> (celle du boîtier Orange). Sur la télécommande de la télé : <span class="k">Source</span> / <span class="k">Input</span>, puis choisir l’HDMI du boîtier Orange.</li>
+            <li>La <b>TV</b> e il <b>decoder Orange</b> sono accesi?</li>
+            <li>La TV deve essere sull’ingresso <b>HDMI</b> giusto (quello del decoder Orange). Sul telecomando della TV: <span class="k">Source</span> / <span class="k">Input</span>, poi scelga l’HDMI del decoder Orange.</li>
           </ul></div>
         </details>
 
         <details class="trouble">
-          <summary>La télécommande télé ne change pas le volume</summary>
-          <div class="body"><p>C’est <b>voulu</b> : le volume de la télé est bloqué. Utilisez <b>Orange</b> (VOL) et le <b>volume du préampli</b>.</p></div>
+          <summary>Il telecomando della TV non cambia il volume</summary>
+          <div class="body"><p>È <b>voluto</b>: il volume della TV è bloccato. Usi <b>Orange</b> (VOL) e il <b>volume del preamplificatore</b>.</p></div>
         </details>
 
         <details class="trouble">
-          <summary>Du son dans le salon mais pas dans l’entrée</summary>
+          <summary>C’è audio in salotto ma non all’ingresso</summary>
           <div class="body"><ul>
-            <li>Allumez le <b>préampli de l’entrée</b>.</li>
-            <li>Vérifiez les <b>2 enceintes de l’entrée</b>.</li>
+            <li>Accenda il <b>preamplificatore dell’ingresso</b>.</li>
+            <li>Controlli le <b>2 casse dell’ingresso</b>.</li>
           </ul></div>
         </details>
 
         <details class="trouble">
-          <summary>Le Bluetooth ne se connecte pas</summary>
+          <summary>Il Bluetooth non si collega</summary>
           <div class="body"><ul>
-            <li>Préampli sur l’entrée <span class="k opt">Bluetooth</span>.</li>
-            <li>Sur le téléphone : « oubliez » <span class="k">Salon</span>, puis reconnectez-vous.</li>
+            <li>Preamplificatore sull’ingresso <span class="k opt">Bluetooth</span>.</li>
+            <li>Sul telefono: « dimentichi » <span class="k">Salon</span>, poi si ricolleghi.</li>
           </ul></div>
         </details>
 
         <details class="trouble">
-          <summary>Le son est saccadé ou se coupe</summary>
+          <summary>L’audio è a scatti o si interrompe</summary>
           <div class="body"><ul>
-            <li>Vérifiez que rien n’a bougé au niveau des appareils.</li>
-            <li>Éteignez puis rallumez le <b>boîtier Orange</b>.</li>
+            <li>Controlli che nulla si sia spostato sugli apparecchi.</li>
+            <li>Spenga e riaccenda il <b>decoder Orange</b>.</li>
           </ul></div>
         </details>
       </div>
@@ -558,7 +558,7 @@
   </div>
 
   <footer class="foot">
-    Guide TV &amp; Son — Salon · Version parents · Gardez ce guide sur la table basse.
+    Guida TV &amp; Audio — Salotto · Versione genitori · Tenga questa guida sul tavolino.
   </footer>
 
 </div>
