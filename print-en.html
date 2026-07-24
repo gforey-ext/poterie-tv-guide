@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TV &amp; Sound Guide — the essentials</title>
+<style>
+  @page{size:A4;margin:9mm}
+  *{box-sizing:border-box}
+  body{margin:0;color:#000;background:#fff;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:11.5pt;line-height:1.34;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  img{filter:grayscale(1) contrast(1.05)}
+
+  .sheetpage{padding:2mm 1mm;height:276mm;display:flex;flex-direction:column}
+  .sheetpage.front{break-after:page}
+
+  /* header */
+  .ph{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;
+    border-bottom:3px solid #000;padding-bottom:8px;margin-bottom:12px}
+  .ph h1{font-size:22pt;margin:0;letter-spacing:-.4px}
+  .ph .sub{margin:4px 0 0;font-size:10pt;color:#333}
+  .ph .qc{flex:0 0 auto;display:grid;grid-template-columns:auto auto auto;
+    grid-template-areas:"txt arr qr" "flg flg flg";align-items:center;gap:2px 10px;
+    border:2.5px solid #000;border-radius:11px;padding:8px 13px}
+  .qc .qc-txt{grid-area:txt;text-align:right;max-width:150px}
+  .qc .qc-t1{font-weight:800;font-size:12.5pt;line-height:1.1}
+  .qc .qc-t2{font-size:8.6pt;color:#333;margin-top:2px;line-height:1.18}
+  .qc .qc-arr{grid-area:arr;display:flex;align-items:center}
+  .qc .qc-qr{grid-area:qr;width:88px;height:88px;filter:none}
+  .qc .qc-flags{grid-area:flg;display:flex;justify-content:center;gap:9px;font-size:17pt;margin-top:6px;line-height:1}
+
+  h2.sec{font-size:15pt;margin:16px 0 8px;padding:2px 0 4px;border-bottom:2px solid #000;
+    display:flex;align-items:center;gap:9px}
+  h2.sec .small{font-weight:400;font-size:10.5pt;color:#333}
+  .n{display:inline-flex;width:24px;height:24px;border-radius:50%;background:#000;color:#fff;
+    align-items:center;justify-content:center;font-weight:800;font-size:13px;flex:0 0 auto}
+
+  /* remotes id strip */
+  .remotes{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}
+  .rm{border:1.5px solid #888;border-radius:8px;padding:9px 6px;text-align:center;break-inside:avoid}
+  .rm .pic{height:230px;display:flex;align-items:center;justify-content:center;margin-bottom:8px}
+  .rm .pic img{max-height:230px;max-width:100%}
+  .rm .name{font-weight:800;font-size:13pt;display:flex;align-items:center;justify-content:center;gap:6px}
+  .rm .use{font-size:10pt;color:#333;margin-top:3px;line-height:1.25}
+
+  /* steps */
+  ol.steps{margin:6px 0 0;padding-left:0;list-style:none;counter-reset:s}
+  ol.steps li{counter-increment:s;position:relative;padding:9px 0 9px 34px;border-top:1px dotted #bbb}
+  ol.steps li:first-child{border-top:none}
+  ol.steps li::before{content:counter(s);position:absolute;left:0;top:7px;width:24px;height:24px;
+    border-radius:50%;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:13px}
+  .warn{border:2.5px solid #000;border-radius:8px;padding:9px 13px;margin:11px 0 0;font-size:11pt;font-weight:600}
+  .tip{background:#eee;border:1.5px solid #888;border-radius:8px;padding:8px 12px;margin:10px 0 0;font-size:10.5pt}
+  .k{display:inline-block;border:1.5px solid #000;border-radius:4px;padding:0 6px;font-weight:800;font-size:10.5pt;white-space:nowrap}
+  .badge{display:inline-flex;width:19px;height:19px;border-radius:50%;background:#000;color:#fff;
+    align-items:center;justify-content:center;font-weight:800;font-size:11px;vertical-align:-3px}
+
+  .cols2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .blk ul{margin:5px 0 0;padding-left:18px}
+  .blk li{margin:6px 0}
+
+  .grow{flex:1 1 auto}
+  .pfoot{margin-top:12px;border:3px solid #000;border-radius:12px;padding:13px 18px;
+    display:flex;align-items:center;gap:18px}
+  .pfoot .bigqr{width:128px;height:128px;flex:0 0 128px;filter:none}
+  .pf-title{font-size:15pt;font-weight:800;line-height:1.2}
+  .pf-sub{font-size:11pt;margin-top:3px}
+  .pf-sub .url{color:#333;font-size:9.5pt}
+  .pf-langs-label{font-size:10.5pt;font-weight:700;margin-top:9px}
+  .pf-flags{display:flex;flex-wrap:wrap;gap:15px;margin-top:6px}
+  .pf-flags span{display:flex;flex-direction:column;align-items:center;line-height:1}
+  .pf-flags .fl{font-size:29pt;line-height:1}
+  .pf-flags i{font-style:normal;font-size:9pt;font-weight:700;margin-top:3px}
+</style>
+</head>
+<body>
+
+<!-- ============ FRONT ============ -->
+<section class="sheetpage front">
+  <div class="ph">
+    <div>
+      <h1>TV &amp; Sound — the essentials</h1>
+      <p class="sub">Keep this on the coffee table.</p>
+    </div>
+    <div class="qc">
+      <div class="qc-txt">
+        <div class="qc-t1">More details?</div>
+        <div class="qc-t2">Full guide, videos &amp; help — scan</div>
+      </div>
+      <div class="qc-arr">
+        <svg width="42" height="34" viewBox="0 0 42 34"><path d="M3 17 H30 M22 6 L37 17 L22 28" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <img class="qc-qr" src="qr.png" alt="">
+      <div class="qc-flags">🇫🇷 🇬🇧 🇪🇸 🇮🇹 🇩🇪 🇵🇹</div>
+    </div>
+  </div>
+
+  <h2 class="sec">Your 4 remotes <span class="small">— you mostly use the first two</span></h2>
+  <div class="remotes">
+    <div class="rm">
+      <div class="pic"><img src="photos/remote-orange.jpg" alt="Orange remote"></div>
+      <div class="name"><span class="badge">1</span> TV &amp; Apps</div>
+      <div class="use">Channels, Netflix, Disney+, YouTube</div>
+    </div>
+    <div class="rm">
+      <div class="pic"><img src="photos/remote-preamp.jpg" alt="WiiM remote"></div>
+      <div class="name"><span class="badge">2</span> Sound</div>
+      <div class="use">Volume + choosing the source</div>
+    </div>
+    <div class="rm">
+      <div class="pic"><img src="photos/remote-tv.jpg" alt="Sony remote"></div>
+      <div class="name"><span class="badge">3</span> Screen</div>
+      <div class="use">Turn the TV on / off</div>
+    </div>
+    <div class="rm">
+      <div class="pic"><img src="photos/remote-cd.jpg" alt="CD remote"></div>
+      <div class="name"><span class="badge">4</span> CD</div>
+      <div class="use">Playing discs</div>
+    </div>
+  </div>
+
+  <h2 class="sec"><span class="n">▶</span> Watch TV</h2>
+  <ol class="steps">
+    <li><b>Turn on</b> all 3 remotes <span class="badge">1</span> <span class="badge">2</span> <span class="badge">3</span> (the on/off button on each).</li>
+    <li>On <span class="badge">2</span> <b>Sound</b>: press the <b>source</b> button (⤴) until the round screen shows <span class="k">Optical In</span>.</li>
+    <li><b>Volume</b>: adjust with <span class="badge">1</span> <b>and</b> <span class="badge">2</span>.</li>
+  </ol>
+  <div class="warn">⚠ No sound? The <span class="badge">3</span> Screen remote <u>never</u> changes the volume — it’s <span class="badge">1</span> and <span class="badge">2</span>. Also check that neither one is turned down to zero.</div>
+  <div class="tip"><b>Change channel</b>: type the number on <span class="badge">1</span>, or use the <b>+</b> / <b>−</b> keys.</div>
+  <div class="grow"></div>
+</section>
+
+<!-- ============ BACK ============ -->
+<section class="sheetpage back">
+  <div class="cols2">
+    <div class="blk">
+      <h2 class="sec">🎬 Netflix · Disney+ · YouTube</h2>
+      <ul>
+        <li>On <span class="badge">1</span> <b>TV &amp; Apps</b>, press <span class="k">MENU</span>.</li>
+        <li>Use the <b>arrows</b> to reach the tile (Netflix, Disney+…) then <span class="k">OK</span>.</li>
+        <li><b>YouTube</b>: <span class="k">MENU</span> → « Autres applis » → YouTube.</li>
+      </ul>
+    </div>
+    <div class="blk">
+      <h2 class="sec">🎵 Listen to music</h2>
+      <ul>
+        <li><b>A CD</b>: turn on <span class="badge">4</span> (red button), insert the disc. On <span class="badge">2</span>, source (⤴) → <span class="k">Line In</span>, then <span class="k">▶</span>.</li>
+        <li><b>Your phone</b>: on <span class="badge">2</span>, source (⤴) → <span class="k">Bluetooth</span>. On the phone, connect to the Bluetooth called <span class="k">Salon</span>.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="sec">🛠️ If something isn’t working</h2>
+  <div class="cols2">
+    <div class="blk">
+      <ul>
+        <li><b>No sound at all</b>: are the <b>speakers</b> switched on (switch to <span class="k">I</span> on the back)? Is <span class="badge">2</span> Sound on the right source? Is the volume on <span class="badge">1</span> and <span class="badge">2</span> turned up?</li>
+        <li><b>Bluetooth won’t connect</b>: on the phone, “forget” <span class="k">Salon</span> then reconnect.</li>
+      </ul>
+    </div>
+    <div class="blk">
+      <ul>
+        <li><b>No picture (black screen)</b>: are <span class="badge">3</span> Screen and <span class="badge">1</span> Orange on? If not, on <span class="badge">3</span> Screen, change the source (<span class="k">Source</span> button) until you see the TV.</li>
+        <li><b>Sound drops out / stutters</b>: switch the <span class="badge">1</span> Orange box off and on again.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grow"></div>
+  <div class="pfoot">
+    <img class="bigqr" src="qr.png" alt="">
+    <div class="pf-text">
+      <div class="pf-title">Need more details or help?</div>
+      <div class="pf-sub">Scan this code for our <b>detailed guide</b> — step by step, with videos. <span class="url">gforey-ext.github.io/poterie-tv-guide</span></div>
+      <div class="pf-langs-label">The guide is available in your language:</div>
+      <div class="pf-flags">
+        <span><span class="fl">🇫🇷</span><i>Français</i></span>
+        <span><span class="fl">🇬🇧</span><i>English</i></span>
+        <span><span class="fl">🇪🇸</span><i>Español</i></span>
+        <span><span class="fl">🇮🇹</span><i>Italiano</i></span>
+        <span><span class="fl">🇩🇪</span><i>Deutsch</i></span>
+        <span><span class="fl">🇵🇹</span><i>Português</i></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
